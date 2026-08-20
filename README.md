@@ -48,6 +48,8 @@ Calibration uses the first ten sessions only. Each of 80 Optuna TPE candidates i
 
 The refined best candidate is trial 50 with corrected-objective loss 16.365. On ten new seeds against three held-out sessions:
 
+![Calibration objective history](outputs/calibration/calibration_history.png)
+
 | Diagnostic | Refined result |
 |---|---:|
 | Simulated response R(1) | $0.049 |
@@ -73,6 +75,10 @@ The smallest orders lie on the one-tick floor. Over the identifiable region `Q/V
 
 The RL exponent is statistically consistent with the square-root benchmark of 0.5. This demonstrates endogenous concavity, not external validation of absolute costs without real parent-order labels.
 
+The plot below extends the original liquidation-impact figure to all current policies, including Immediate, Front-loaded, Adaptive, and tuned RL2.
+
+![Market impact scaling by execution policy](outputs/execution_algorithms/comparison/impact_comparison.png)
+
 ## Execution algorithms
 
 Policies are compared on the same market seeds, side, parent size, start state, and deadline. Primary cost compares each fill with the paired control midpoint at the same timestamp. Unfilled inventory receives a 5 bp penalty.
@@ -87,6 +93,8 @@ Policies are compared on the same market seeds, side, parent size, start state, 
 | 6 | Immediate | 0.03569 | 0.07220 | 99.27% average |
 
 Immediate submits the entire parent at arrival and is the worst urgency benchmark. Its minimum completion is 33.17% because a one-shot market order cannot wait for replenishment.
+
+![Execution cost comparison](outputs/execution_algorithms/comparison/cost_comparison.png)
 
 POV has the lowest mean cost; Adaptive has nearly the same mean and the smallest dispersion. Their difference is not statistically resolved. Adaptive is the stable, explainable application-facing default; RL remains experimental.
 
@@ -108,7 +116,7 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 Open `http://127.0.0.1:8000`.
 
-The interface accepts side, strategy, parent quantity, deadline, volatility, spread, trade-arrival rate, displayed depth, and seed. **Run simulation** creates an asynchronous job. A progress bar shows the paired-control and execution phases, then the page displays completion, paired cost, average fill, cumulative execution versus a linear reference, and every child-order instruction.
+The interface accepts side, parent quantity, deadline, volatility, spread, trade-arrival rate, displayed depth, and seed. Defaults are rounded versions of the calibrated BTC market. Each asynchronous job evaluates Immediate, TWAP, and Adaptive on the same seeded market path. The page compares estimated causal impact, execution cost, and completion, then presents only the recommended Adaptive child-order schedule. A progress bar reports each simulation phase.
 
 API routes:
 
@@ -123,7 +131,6 @@ Example request:
 ```json
 {
   "side": "SELL",
-  "strategy": "adaptive",
   "parent_quantity": 1.0,
   "duration_seconds": 300,
   "volatility": 2.02,

@@ -15,6 +15,10 @@ def main():
     plt.figure()
     for strategy,g in by_size.groupby("strategy"):plt.plot(g.participation,g.paired_cost_bp,marker="o",label=strategy)
     plt.xlabel("Q / baseline volume");plt.ylabel("Paired execution cost (bp)");plt.legend();plt.tight_layout();plt.savefig(out/"cost_comparison.png",dpi=170);plt.close();print(rank.to_string(index=False))
+    impact=data.groupby(["strategy","participation"],as_index=False).peak_impact_causal.mean();impact["impact_bp"]=impact.peak_impact_causal*1e4;impact.to_csv(out/"impact_by_strategy_and_size.csv",index=False)
+    plt.figure()
+    for strategy,g in impact.groupby("strategy"):plt.plot(g.participation,g.impact_bp,marker="o",label=strategy)
+    plt.xscale("log");plt.xlabel("Parent size / baseline volume");plt.ylabel("Peak paired causal impact (bp)");plt.legend(ncol=2);plt.tight_layout();plt.savefig(out/"impact_comparison.png",dpi=170);plt.close()
 
 
 if __name__=="__main__":main()
