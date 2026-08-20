@@ -109,6 +109,10 @@ Results and plots are under `outputs/execution_algorithms/comparison/` and `outp
 
 ## Web application and API
 
+On Windows, double-click [`app/Run BTC Simulator.bat`](app/Run%20BTC%20Simulator.bat). It checks the required packages, opens the application in the default browser, and keeps a console window available for stopping the server with `Ctrl+C`.
+
+Alternatively, start it from a terminal:
+
 ```powershell
 python -m pip install -r requirements.txt
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
