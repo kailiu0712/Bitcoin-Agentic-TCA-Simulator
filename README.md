@@ -109,7 +109,7 @@ Results and plots are under `outputs/execution_algorithms/comparison/` and `outp
 
 ## Web application and API
 
-On Windows, double-click [`app/Run BTC Simulator.bat`](app/Run%20BTC%20Simulator.bat). It checks the required packages, opens the application in the default browser, and keeps a console window available for stopping the server with `Ctrl+C`.
+In VS Code, open [`app/run_app.py`](app/run_app.py) and click **Run Python File**. The launcher resolves the project directory, starts the server, waits until it is ready, and opens the application in the default browser. Use VS Code's red Stop button or `Ctrl+C` to stop it.
 
 Alternatively, start it from a terminal:
 
