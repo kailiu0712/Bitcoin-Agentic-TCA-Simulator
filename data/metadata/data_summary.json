@@ -1,0 +1,119 @@
+{
+  "schema": "timestamp_ns: int64\nsource_timestamp: timestamp[ns, tz=UTC]\nevent_type: string\nside: string\nprice: double\nsize: double\norder_id: string\ntrade_id: int64\norder_type: string\nbest_bid: double\nbest_ask: double\nbid_size: double\nask_size: double\nmid: double\nspread: double\nsign_source: string\ndate: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 2069",
+  "sessions": [
+    {
+      "date": "2026-07-05",
+      "rows": 84912,
+      "trades": 33660,
+      "quotes": 51252
+    },
+    {
+      "date": "2026-07-06",
+      "rows": 119391,
+      "trades": 53776,
+      "quotes": 65615
+    },
+    {
+      "date": "2026-07-07",
+      "rows": 104999,
+      "trades": 46604,
+      "quotes": 58395
+    },
+    {
+      "date": "2026-07-08",
+      "rows": 80828,
+      "trades": 46710,
+      "quotes": 34118
+    },
+    {
+      "date": "2026-07-09",
+      "rows": 91041,
+      "trades": 41813,
+      "quotes": 49228
+    },
+    {
+      "date": "2026-07-10",
+      "rows": 104007,
+      "trades": 47118,
+      "quotes": 56889
+    },
+    {
+      "date": "2026-07-11",
+      "rows": 164490,
+      "trades": 27603,
+      "quotes": 136887
+    },
+    {
+      "date": "2026-07-12",
+      "rows": 103178,
+      "trades": 28950,
+      "quotes": 74228
+    },
+    {
+      "date": "2026-07-13",
+      "rows": 72201,
+      "trades": 54647,
+      "quotes": 17554
+    },
+    {
+      "date": "2026-07-15",
+      "rows": 137712,
+      "trades": 53560,
+      "quotes": 84152
+    },
+    {
+      "date": "2026-07-16",
+      "rows": 121845,
+      "trades": 48510,
+      "quotes": 73335
+    },
+    {
+      "date": "2026-07-17",
+      "rows": 76855,
+      "trades": 55433,
+      "quotes": 21422
+    },
+    {
+      "date": "2026-07-18",
+      "rows": 218544,
+      "trades": 30548,
+      "quotes": 187996
+    }
+  ],
+  "usable_dates": [
+    "2026-07-05",
+    "2026-07-06",
+    "2026-07-07",
+    "2026-07-08",
+    "2026-07-09",
+    "2026-07-10",
+    "2026-07-11",
+    "2026-07-12",
+    "2026-07-13",
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18"
+  ],
+  "calibration_dates": [
+    "2026-07-05",
+    "2026-07-06",
+    "2026-07-07",
+    "2026-07-08",
+    "2026-07-09",
+    "2026-07-10",
+    "2026-07-11",
+    "2026-07-12",
+    "2026-07-13",
+    "2026-07-15"
+  ],
+  "validation_dates": [
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18"
+  ],
+  "quarantined": {
+    "2026-07-14": "invalid Parquet footer/magic bytes"
+  },
+  "quality_new_sessions": {}
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "A": 0.00010454671373267433,
+    "delta": 0.6268514707950322,
+    "ci_low": 0.5903356224747583,
+    "ci_high": 0.6633963183484224,
+    "power_r2": 0.9988782260812,
+    "linear_r2": 0.9796167061526848,
+    "n": 240,
+    "fit_min_participation": 0.01,
+    "all_grid_delta": 0.5726580971730129,
+    "distance_from_half": 0.12685147079503223,
+    "impact_at_1pct": 5.845590339906205e-06,
+    "impact_at_5pct": 1.5472989775346735e-05,
+    "strategy": "immediate",
+    "mean_shortfall": 3.7788532983231517e-06,
+    "shortfall_std": 6.043709470089524e-06,
+    "mean_paired_cost": 3.5693318332848233e-06,
+    "mean_penalized_cost": 7.220386559708914e-06,
+    "completion_rate": 0.9926978905471519,
+    "minimum_completion": 0.33173156884678295
+  }
+]

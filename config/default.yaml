@@ -1,0 +1,53 @@
+data:
+  raw_glob: "data/raw/btc/*.parquet"
+  processed_events: "data/processed/events.parquet"
+  metadata: "data/metadata/data_summary.json"
+  calibration_days: ["2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-15"]
+  validation_days: ["2026-07-16", "2026-07-17", "2026-07-18"]
+  quote_sample_ms: 100
+simulation:
+  duration_seconds: 3600
+  seed: 7
+  tick_size: 0.1
+  initial_price: 63000.0
+  market_order_arrival_rate: 0.55
+  trade_sign_persistence: 0.80
+  sign_regime_switch_probability: 0.06
+  trade_size_median: 0.001
+  trade_size_sigma: 2.75
+  market_maker_target_spread: 0.10
+  market_maker_quote_size: 0.50
+  market_maker_quote_size_sigma: 1.0
+  market_maker_levels: 8
+  market_maker_level_spacing_ticks: 2
+  market_maker_refresh_seconds: 0.20
+  market_maker_inventory_skew: 0.50
+  market_maker_inventory_signal_decay: 0.50
+  market_maker_flow_response: 0.50
+  market_maker_flow_signal_decay: 1.0
+  market_maker_spread_sensitivity: 0.10
+  market_maker_asymmetric_liquidity: 0.25
+  reference_price_volatility: 20.0
+  order_flow_burst_probability: 0.35
+  order_flow_burst_interval_seconds: 0.01
+calibration:
+  trials: 80
+  seeds_per_trial: 3
+  weights:
+    median_spread: 2.0
+    mean_trade_size: 1.0
+    trades_per_second: 2.0
+    sign_acf_1: 2.0
+    response_1: 2.0
+    response_10: 2.0
+    return_volatility: 1.5
+    spread_distribution: 2.0
+    relative_spread_distribution: 1.0
+    trade_size_distribution: 1.5
+    interarrival_distribution: 1.5
+    depth_distribution: 1.0
+    sign_acf_curve: 2.0
+    response_curve: 2.5
+    clock_response_curve: 2.0
+    size_impact_curve: 1.0
+    flow_impact_curve: 1.5

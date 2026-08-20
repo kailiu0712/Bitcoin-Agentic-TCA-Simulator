@@ -1,0 +1,16 @@
+metric,normalized_distance
+size_impact_curve,1.8391955796357304
+flow_impact_curve,1.1471396577028565
+spread_distribution,1.0965978293740073
+relative_spread_distribution,1.0952049434737552
+mean_trade_size,1.0004544767298407
+clock_response_curve,0.9982677068812889
+response_curve,0.6761106352459954
+trade_size_distribution,0.6642003133981486
+return_volatility,0.5779771854800761
+interarrival_distribution,0.4838158524733471
+sign_acf_curve,0.390083180267561
+trades_per_second,0.3650592786296758
+bid_depth_distribution,0.3522427099374939
+ask_depth_distribution,0.29847309177580655
+median_spread,0.0
