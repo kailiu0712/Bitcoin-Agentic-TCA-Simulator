@@ -1,0 +1,6 @@
+**ZJ p3 summary statistics, time-weighted over all packets**
+
+| regime   | label                        |   average_price_usd |   average_spread_usd |   average_spread_bps |   average_spread_ticks |   mean_total_volume_at_best_btc |   mean_size_of_best_quote_orders_btc |   mean_bid_qty_btc |   mean_ask_qty_btc |   weighted_hours |   share_of_span_excluded_as_gap |
+|:---------|:-----------------------------|--------------------:|---------------------:|---------------------:|-----------------------:|--------------------------------:|-------------------------------------:|-------------------:|-------------------:|-----------------:|--------------------------------:|
+| normal   | Normal (18-24 Jul 2026)      |             65079   |             0.182834 |            0.0280579 |                1.82834 |                         2.08518 |                              1.04259 |           0.926463 |           1.15872  |          168     |                     0           |
+| stress   | Stress (26 Jul - 2 Aug 2026) |             63899.3 |             0.205013 |            0.0320767 |                2.05013 |                         1.6553  |                              0.82765 |           0.769399 |           0.885901 |          191.921 |                     0.000410467 |

@@ -1,0 +1,10 @@
+metric,normalized_distance
+arrival_clustering,0.6441916033824051
+trade_size_tail_top_1pct_volume_share,0.3987884107129779
+trade_size_tail_p99_to_median,0.2196446945074995
+ofi_slope,0.1175271386720106
+depth_shape_ask,0.10714285580357147
+depth_shape_bid,0.10714285580357147
+ofi_r2,0.07196129761000884
+response_monotone_fraction,0.07142857053571418
+spread_one_tick_share,0.01453530447309049

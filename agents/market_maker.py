@@ -16,12 +16,22 @@ class MarketMakerAgent:
 
     def wake(self, kernel):
         ex = kernel.exchange
+        # Measure the live queue before this maker refreshes its own quotes;
+        # measuring after cancellation would make the imbalance identically 0.
+        pre_state = ex.book.state()
         for oid in self.order_ids:
             ex.cancel(kernel.time, self.agent_id, oid)
         self.order_ids.clear()
         dt = self.cfg["market_maker_refresh_seconds"]
         state = ex.book.state()
         center = state["mid"] if state["mid"] is not None else self.reference
+        # Quote imbalance is an endogenous OFI-to-price channel.  It gives
+        # book events predictive power instead of making price movement depend
+        # only on the maker's exogenous reference innovation (P1 Fact 8).
+        bid_size = pre_state.get("bid_size", 0.0)
+        ask_size = pre_state.get("ask_size", 0.0)
+        imbalance = (bid_size - ask_size) / max(1e-12, bid_size + ask_size)
+        center += self.cfg.get("market_maker_queue_imbalance_response", 0.0) * imbalance
         center += self.rng.normal(0, self.cfg["reference_price_volatility"] * np.sqrt(dt))
         self.reference = center
         self.inventory = ex.inventory[self.agent_id]; self.cash = ex.cash[self.agent_id]
@@ -46,6 +56,12 @@ class MarketMakerAgent:
         for level in range(levels):
             for side, price in (("BUY", bid-level*spacing*tick),("SELL",ask+level*spacing*tick)):
                 oid=self._next_id;self._next_id+=1;qty=median if sigma<=0 else self.rng.lognormal(np.log(median),sigma)
+                # Visible depth should grow away from the touch and then
+                # taper at the edge of the quoting range (P0 Fact 20).
+                slope=float(self.cfg.get("market_maker_depth_slope",0.35))
+                peak=float(self.cfg.get("market_maker_depth_peak",4.0))
+                collapse=float(self.cfg.get("market_maker_depth_collapse",0.08))
+                qty *= (1.0 + slope * level) * np.exp(-collapse * max(0.0, level - peak) ** 2)
                 # Predictable buy flow attracts ask liquidity (and vice versa),
                 # an interpretable asymmetric-dynamic-liquidity response.
                 pressure=np.clip(self.flow_signal,-3,3);same_side=1 if side=="SELL" else -1

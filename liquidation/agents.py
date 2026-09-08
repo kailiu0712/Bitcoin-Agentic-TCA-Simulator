@@ -64,15 +64,40 @@ class FrontLoadedExecutionAgent(ExecutionAgent):
 
 class LiquidityAdaptiveExecutionAgent(ExecutionAgent):
     """Interpretable schedule using urgency, spread, imbalance and displayed depth."""
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.profile_decay=None
+        self.profile_weights=None
+
+    def _schedule_profile(self,kernel):
+        s=kernel.exchange.book.state()
+        depth=(s["ask_size"] if self.side=="BUY" else s["bid_size"]) or 0.0
+        ratio=self.total_quantity/max(depth,1e-9)
+        spread=s["spread"] or 0.0
+        # Use only observable liquidity regime. Thin books keep the online
+        # liquidity-seeking policy; ordinary and large parents are mildly or
+        # strongly front-loaded to reduce exposure to later price impact.
+        self.profile_decay=0.0 if ratio>=18 else (2.0 if ratio>=8 else 1.0)
+        weights=np.exp(-self.profile_decay*np.linspace(0,1,self.n_slices))
+        self.profile_weights=weights/weights.sum()
+
     def desired_quantity(self,kernel,step):
         if step==self.n_slices-1:return self.remaining
+        if self.profile_weights is None:self._schedule_profile(kernel)
         s=kernel.exchange.book.state();schedule=self.remaining/max(1,self.n_slices-step)
         bid,ask=s["bid_size"] or 0.0,s["ask_size"] or 0.0;depth=ask if self.side=="BUY" else bid
         imbalance=(bid-ask)/(bid+ask+1e-9);adverse_pressure=self.sign*imbalance
+        mid=s.get("mid"); favorable_move=0.0 if self.arrival_mid is None or mid is None else self.sign*(mid-self.arrival_mid)
         time_fraction=step/max(1,self.n_slices-1);urgency=.65+1.1*time_fraction
         spread_multiplier=.65 if (s["spread"] or 0)>.1 and time_fraction<.8 else 1.0
-        signal_multiplier=float(np.clip(1+.6*adverse_pressure,.55,1.45))
-        return min(self.remaining,max(.25*schedule,min(.8*depth,urgency*signal_multiplier*spread_multiplier*schedule)))
+        # Adverse queue pressure means the next move is more likely to be
+        # against the liquidation. Slow down there and spend the schedule
+        # when pressure is favorable; the previous sign did the opposite.
+        signal_multiplier=float(np.clip(1-.6*adverse_pressure+.35*np.tanh(favorable_move),.55,1.45))
+        online=min(self.remaining,max(.25*schedule,min(.8*depth,urgency*signal_multiplier*spread_multiplier*schedule)))
+        planned=self.total_quantity*self.profile_weights[step]
+        profile_multiplier=float(np.clip(planned/max(schedule,1e-9),.70,1.40))
+        return min(self.remaining,online*profile_multiplier)
 
 
 class TabularRLExecutionAgent(ExecutionAgent):

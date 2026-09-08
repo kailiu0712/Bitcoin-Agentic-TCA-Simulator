@@ -1,9 +1,286 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BTC Execution Lab</title><link rel="stylesheet" href="/static/styles.css"></head>
-<body><main><header><div><span class="eyebrow">AGENT-BASED TCA</span><h1>BTC Execution Lab</h1><p>Turn a parent order and market snapshot into a timed execution path.</p></div><div class="status-dot">Research simulator</div></header>
-<section class="layout"><form id="form" class="card"><h2>Execution request</h2><div class="grid">
-<label>Side<select name="side"><option>SELL</option><option>BUY</option></select></label><label>Execution policy<input value="Adaptive (recommended)" disabled></label>
-<label>Parent quantity (BTC)<input name="parent_quantity" type="number" value="1.000" min="0.001" max="100" step="any" required></label><label>Deadline (seconds)<input name="duration_seconds" type="number" value="300" min="30" max="3600" step="1" required></label>
-<label>Volatility (USD/√s)<input name="volatility" type="number" value="2.02" min="0" max="100" step="any" required></label><label>Spread (USD)<input name="spread" type="number" value="0.10" min="0.01" max="100" step="any" required></label>
-<label>Trade arrival rate (/s)<input name="arrival_rate" type="number" value="0.536" min="0.001" max="20" step="any" required></label><label>Displayed depth (BTC)<input name="displayed_depth" type="number" value="0.30" min="0.01" max="100" step="any" required></label>
-<label>Random seed<input name="seed" type="number" value="2026" min="0" step="1" required></label></div><button id="run" type="submit">Compare and build execution path</button><p class="note">Defaults are rounded from the calibrated BTC market. Every run compares Adaptive with Immediate and TWAP on the same paired market.</p></form>
-<section class="card results"><div class="result-head"><h2>Adaptive execution recommendation</h2><span id="badge">Ready</span></div><div id="progressWrap" class="progress-wrap hidden"><div class="progress"><span id="bar"></span></div><p id="progressText">Queued</p></div><div id="empty" class="empty">Configure a parent order and run the paired comparison.</div><div id="content" class="hidden"><div id="metrics" class="metrics"></div><h3>Why schedule the order?</h3><div id="comparison" class="comparison"></div><h3>Trader execution path</h3><div class="chart-wrap"><svg id="chart" viewBox="0 0 900 390" role="img" aria-label="Adaptive cumulative execution path"></svg></div><div class="legend"><span><i class="actual"></i>Adaptive cumulative fill</span></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Requested</th><th>Filled</th><th>Cumulative</th><th>Remaining</th><th>Impact</th></tr></thead><tbody id="rows"></tbody></table></div></div></section></section></main><script src="/static/app.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>智执 · 清算冲击仿真器</title>
+  <link rel="stylesheet" href="/static/styles.css?v=20260906-31">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">智执</span>
+      <div class="brand-text">
+        <strong>清算冲击仿真器</strong>
+        <span>Liquidation Impact Simulator</span>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <span class="chip" id="venueChip">Kraken BTC/USD · L3</span>
+      <span class="chip">多智能体限价簿市场</span>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="intro">
+    <div class="intro-copy">
+      <h1>匹配市场真实冲击表现的清算冲击仿真器</h1>
+      <p>
+        系统以 <strong>Kraken BTC/USD L3 逐笔盘口与成交数据</strong>完成风格化事实训练，构建由背景订单流、做市流动性与执行算法
+        三类智能体共同演化的限价簿市场。价格冲击由撮合与流动性补充涌现，而非写入的公式，因此能够复现真实市场的冲击标度关系。
+        <strong>标的、数据源与执行算法均可灵活调整与接入</strong>：算法接入后即在同种子配对反事实对照下，
+        得到峰值冲击、冲击衰减与执行成本报告。
+      </p>
+    </div>
+    <div class="intro-stats" id="introStats"></div>
+  </section>
+
+  <section class="panel" id="architecture">
+    <div class="panel-head">
+      <div>
+        <span class="kicker">MARKET ARCHITECTURE</span>
+        <h2>多智能体市场架构</h2>
+      </div>
+      <p class="panel-note">
+        事件驱动内核调度三类智能体，统一进入价格—时间优先的限价簿撮合；每一层负责生成一组可被检验的微观结构事实。
+      </p>
+    </div>
+    <div class="arch-grid" id="archGrid"></div>
+    <p class="arch-flow">
+      事件内核 → <b>背景订单流</b> · <b>做市流动性</b> · <b>执行算法</b> → 限价簿撮合 → 成交与盘口事件 → 配对反事实冲击度量
+    </p>
+  </section>
+
+  <section class="panel" id="evidence">
+    <div class="panel-head">
+      <div>
+        <span class="kicker">CALIBRATION</span>
+        <h2>风格化事实校准</h2>
+      </div>
+      <p class="panel-note" id="evidenceNote"></p>
+    </div>
+
+    <div class="evidence-grid">
+      <div class="evidence-table-wrap">
+        <table class="fact-table">
+          <thead>
+            <tr>
+              <th class="col-id">编号</th>
+              <th>风格化事实</th>
+              <th>为什么影响 TCA</th>
+              <th class="col-num">仿真观测</th>
+              <th class="col-num">实测参考</th>
+            </tr>
+          </thead>
+          <tbody id="factRows"></tbody>
+        </table>
+      </div>
+
+      <figure class="evidence-chart">
+        <figcaption>
+          <strong>元订单冲击标度律</strong>
+          <span id="impactLawNote"></span>
+        </figcaption>
+        <div class="chart-frame">
+          <svg id="lawChart" viewBox="0 0 520 340" role="img" aria-label="冲击随参与率变化的对数-对数标度关系"></svg>
+        </div>
+        <p class="figure-note" id="impactLawFoot"></p>
+
+        <div class="gate-block">
+          <div class="block-head">
+            <h3>校准偏差</h3>
+            <span class="hint">留出交易日 · 独立随机种子</span>
+          </div>
+          <ul class="gate-list" id="gateRows"></ul>
+          <p class="figure-note" id="gateFoot"></p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="panel" id="lab">
+    <div class="panel-head">
+      <div>
+        <span class="kicker">IMPACT LAB</span>
+        <h2>清算冲击实验台</h2>
+      </div>
+      <p class="panel-note">同一随机种子生成「无执行」对照市场，母单注入后逐点相减，得到纯粹由执行造成的因果冲击。</p>
+    </div>
+
+    <div class="lab-grid">
+      <form id="form" class="control-column">
+        <div class="control-block profile-block">
+          <div class="block-head">
+            <h3>校准档案</h3>
+            <span class="hint">当前生效</span>
+          </div>
+          <dl class="profile" id="profile"></dl>
+          <p class="plug-note">新标的按同一流程完成数据标准化与校准后即可切换；执行算法在 <code>ALGORITHMS</code> 注册后自动进入本页评估。</p>
+        </div>
+
+        <div class="control-block">
+          <div class="block-head">
+            <h3>市场情景</h3>
+            <span class="hint">情景模板</span>
+          </div>
+          <div class="preset-row">
+            <button type="button" class="preset" data-side="SELL" data-parent_quantity="1.000" data-duration_seconds="300" data-volatility="2.02" data-spread="0.10" data-arrival_rate="0.536" data-displayed_depth="0.30" data-seed="2026">常规流动性</button>
+            <button type="button" class="preset" data-side="BUY" data-parent_quantity="4.500" data-duration_seconds="600" data-volatility="2.40" data-spread="0.13" data-arrival_rate="0.580" data-displayed_depth="0.18" data-seed="2027">薄盘口</button>
+            <button type="button" class="preset" data-side="SELL" data-parent_quantity="5.000" data-duration_seconds="900" data-volatility="2.60" data-spread="0.14" data-arrival_rate="0.700" data-displayed_depth="0.42" data-seed="2028">大额母单</button>
+          </div>
+          <div class="field-grid">
+            <label>波动率 <span>USD/√s</span>
+              <input name="volatility" type="number" value="2.40" min="0" max="100" step="any" required>
+            </label>
+            <label>目标价差 <span>USD</span>
+              <input name="spread" type="number" value="0.13" min="0.01" max="100" step="any" required>
+            </label>
+            <label>成交到达率 <span>笔/秒</span>
+              <input name="arrival_rate" type="number" value="0.580" min="0.001" max="20" step="any" required>
+            </label>
+            <label>挂单深度 <span>BTC</span>
+              <input name="displayed_depth" type="number" value="0.18" min="0.01" max="100" step="any" required>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-block">
+          <div class="block-head">
+            <h3>母单指令</h3>
+          </div>
+          <div class="field-grid">
+            <label>方向
+              <select name="side">
+                <option value="SELL">卖出 SELL</option>
+                <option value="BUY">买入 BUY</option>
+              </select>
+            </label>
+            <label>母单规模 <span>BTC</span>
+              <input name="parent_quantity" type="number" value="4.500" min="0.001" max="100" step="any" required>
+            </label>
+            <label>执行时限 <span>秒</span>
+              <input name="duration_seconds" type="number" value="600" min="30" max="3600" step="1" required>
+            </label>
+            <label>随机种子
+              <input name="seed" type="number" value="2027" min="0" step="1" required>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-block">
+          <div class="block-head">
+            <h3>待评估执行算法</h3>
+            <span class="hint" id="algoCount"></span>
+          </div>
+          <ul class="algo-list" id="algoList"></ul>
+        </div>
+
+        <button id="run" type="submit">运行冲击评估</button>
+
+        <div class="control-block metric-legend">
+          <div class="block-head"><h3>度量口径</h3></div>
+          <dl>
+            <dt>峰值因果冲击</dt><dd>执行期内中间价相对对照市场的最大偏离</dd>
+            <dt>终点冲击</dt><dd>母单执行完成时刻尚未消散的偏离</dd>
+            <dt>冲击留存率</dt><dd>观察窗末端偏离 ÷ 峰值偏离，衡量永久冲击占比</dd>
+            <dt>配对执行成本</dt><dd>每笔成交价与对照市场同时刻中间价之差，按母单名义额加权</dd>
+          </dl>
+        </div>
+
+        <p class="disclaimer">离线评估环境，不接入实盘，不构成投资建议。</p>
+      </form>
+
+      <section class="result-column">
+        <div class="result-head">
+          <h3>评估结果</h3>
+          <span id="badge" class="chip">待运行</span>
+        </div>
+
+        <div id="progressWrap" class="progress-wrap hidden">
+          <div class="progress"><span id="bar"></span></div>
+          <p id="progressText">排队中</p>
+        </div>
+
+        <div id="empty" class="empty">
+          <p>设置市场情景与母单指令后运行评估。</p>
+          <span>系统会生成同种子对照市场，并逐一测量每个执行算法的冲击轨迹、冲击衰减与配对执行成本。</span>
+        </div>
+
+        <div id="content" class="hidden">
+          <div id="algoCards" class="algo-cards"></div>
+
+          <div class="block-head chart-head">
+            <h4>因果冲击轨迹</h4>
+            <div class="tabs" id="pathTabs"></div>
+          </div>
+          <div class="chart-frame chart-frame-wide">
+            <svg id="chart" viewBox="0 0 940 430" role="img" aria-label="各执行算法的因果冲击轨迹"></svg>
+            <div id="tooltip" class="tooltip hidden"></div>
+          </div>
+          <p class="figure-note">
+            纵轴为执行市场与同种子无执行对照的中间价之差，正值表示价格向不利方向移动；圆点为选中算法的子单成交，
+            下方独立面板按各自最大子单归一化显示请求规模。
+          </p>
+
+          <div class="block-head chart-head">
+            <h4 id="detailTitle">子单成交明细</h4>
+            <p>每个子单的请求量、实际成交量与该时刻的因果冲击。</p>
+          </div>
+          <div class="table-wrap">
+            <table class="detail-table">
+              <thead>
+                <tr>
+                  <th>时间</th>
+                  <th>请求量</th>
+                  <th>成交量</th>
+                  <th>累计成交</th>
+                  <th>剩余量</th>
+                  <th>成交价</th>
+                  <th>因果冲击</th>
+                </tr>
+              </thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="footer-grid">
+    <article>
+      <span class="kicker">METHOD</span>
+      <h3>方法</h3>
+      <ul>
+        <li>事件驱动限价簿，价格—时间优先撮合</li>
+        <li>Hawkes 到达、长记忆符号、重尾成交规模</li>
+        <li>公共随机数配对反事实，隔离执行的因果冲击</li>
+      </ul>
+    </article>
+    <article>
+      <span class="kicker">USE CASE</span>
+      <h3>应用场景</h3>
+      <ul>
+        <li>执行算法上线前的冲击与成本验收</li>
+        <li>不同流动性状态下的执行参数压力测试</li>
+        <li>冲击模型标定所需的可复现实验样本</li>
+      </ul>
+    </article>
+    <article>
+      <span class="kicker">ROADMAP</span>
+      <h3>扩展方向</h3>
+      <ul>
+        <li>多标的与多场所接入，复用同一校准流程</li>
+        <li>手续费、撮合延迟与跨场所路由建模</li>
+        <li>算法库的批量回归式冲击验收</li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<script src="/static/app.js?v=20260906-31"></script>
+</body>
+</html>

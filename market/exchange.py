@@ -3,8 +3,8 @@ from .order_book import OrderBook
 
 
 class Exchange:
-    def __init__(self):
-        self.book = OrderBook()
+    def __init__(self, tick_size=0.1, profile_levels=8):
+        self.book = OrderBook(tick_size=tick_size, profile_levels=profile_levels)
         self.trades, self.events = [], []
         self.trade_id = 0
         self.inventory, self.cash = defaultdict(float), defaultdict(float)
@@ -43,14 +43,14 @@ class Exchange:
             self._record(timestamp, "LIMIT_CANCEL", agent_id, None, None, 0.0, order_id)
         return ok
 
-    def _record(self, timestamp, event_type, agent_id, side, price, size, order_id):
+    def _record(self, timestamp, event_type, agent_id, side, price, size, order_id, include_profile=False):
         row = {"timestamp": timestamp, "event_type": event_type, "agent_id": agent_id, "side": side,
                "price": price, "size": size, "order_id": order_id, "trade_id": None}
-        row.update(self.book.state())
+        row.update(self.book.state(include_profile=include_profile))
         self.events.append(row)
 
     def record_quote(self,timestamp,agent_id="exchange"):
-        self._record(timestamp,"QUOTE_UPDATE",agent_id,None,None,None,None)
+        self._record(timestamp,"QUOTE_UPDATE",agent_id,None,None,None,None,include_profile=True)
 
     def output(self):
         out = list(self.events)

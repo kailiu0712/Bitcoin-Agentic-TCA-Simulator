@@ -1,0 +1,3 @@
+cached_trades,cached_fills,cached_quotes,fills_removed_outside_regime,fill_groups_unverified,orders_removed_invalid,exchange_backsteps_before_sort,quote_exchange_backsteps_before_sort,matched_orders,matched_fills,source_order_coverage,fill_time,quote_time,regime
+161702,396688,4490391,55433,4,0,53,0,161702,341248,1.0,inherited verified aggressive-order exchange timestamp,stable exchange-time sort; same timestamp last receipt wins,normal
+195933,415105,6199245,25031,0,0,32,0,195933,390074,1.0,inherited verified aggressive-order exchange timestamp,stable exchange-time sort; same timestamp last receipt wins,stress

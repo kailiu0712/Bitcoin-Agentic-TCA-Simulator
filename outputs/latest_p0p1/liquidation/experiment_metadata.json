@@ -1,0 +1,70 @@
+{
+  "exploratory_warning": "Stage 1 response/flow-impact validation failed; do not treat Stage 2 as validated TCA.",
+  "background_config_frozen_for_grid": true,
+  "config": {
+    "duration_seconds": 3600,
+    "seed": 7,
+    "tick_size": 0.1,
+    "initial_price": 63000.0,
+    "market_order_arrival_rate": 0.40948410035024235,
+    "trade_sign_persistence": 0.8776983157666562,
+    "order_flow_long_memory_probability": 0.3239295828988996,
+    "order_flow_long_memory_exponent": 0.3331494458803423,
+    "order_flow_long_memory_max_lag": 2000,
+    "sign_regime_switch_probability": 0.13845945011215932,
+    "trade_size_median": 0.0015941267529866884,
+    "trade_size_sigma": 2.90231078857174,
+    "market_maker_target_spread": 0.1,
+    "market_maker_quote_size": 0.7069681846639476,
+    "market_maker_quote_size_sigma": 0.7818142923020379,
+    "market_maker_levels": 8,
+    "market_maker_level_spacing_ticks": 5,
+    "market_maker_depth_slope": 0.35,
+    "market_maker_depth_peak": 4.0,
+    "market_maker_depth_collapse": 0.08,
+    "market_maker_refresh_seconds": 0.5891150077473812,
+    "market_maker_inventory_skew": 0.05101266886813833,
+    "market_maker_inventory_signal_decay": 0.3115609592701257,
+    "market_maker_flow_response": 0.3342889792664954,
+    "market_maker_queue_imbalance_response": -1.9412686081498371,
+    "market_maker_flow_signal_decay": 0.054643858972321185,
+    "market_maker_spread_sensitivity": 0.014258766249363203,
+    "market_maker_asymmetric_liquidity": 0.7482020403626902,
+    "reference_price_volatility": 6.963599204133804,
+    "order_flow_burst_probability": 0.3822164894679245,
+    "order_flow_burst_interval_seconds": 0.005039364788370464,
+    "order_flow_hawkes_branching": 0.733213798958841,
+    "order_flow_hawkes_decay": 0.5260040741741201,
+    "large_order_probability": 0.007807904648827595,
+    "large_order_multiplier": 16.68490238289328,
+    "large_order_pareto": 1.4076108621316086
+  },
+  "ratios": [
+    0.001,
+    0.0025,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "durations": [
+    120.0,
+    300.0,
+    600.0
+  ],
+  "sides": [
+    "BUY",
+    "SELL"
+  ],
+  "strategies": [
+    "twap"
+  ],
+  "seeds": [
+    0
+  ],
+  "runs": 48,
+  "runtime_seconds": 29.184106500004418,
+  "common_random_numbers": true
+}

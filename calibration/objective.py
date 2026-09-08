@@ -53,6 +53,31 @@ def calibration_loss(sim,target,weights):
         common=sorted(set(sim.get(key,{}))&set(target.get(key,{})),key=int)
         if common:
             a=[sim[key][x] for x in common];b=[target[key][x] for x in common];add(name,b,a,_nrmse(a,b))
+    # Optional P0/P1 extensions.  Older target files remain valid because
+    # these terms are only scored when the evidence target contains them.
+    for name, key in (("arrival_clustering", "arrival_fano"),):
+        common=sorted(set(sim.get(key, {})) & set(target.get(key, {})), key=int)
+        if common:
+            a=[sim[key][x] for x in common]; b=[target[key][x] for x in common]
+            add(name, b, a, _nrmse(a, b))
+    for name, key in (("book_shape_bid", "bid_depth_profile"), ("book_shape_ask", "ask_depth_profile")):
+        a=sim.get("depth_profile", {}).get(key, []); b=target.get("depth_profile", {}).get(key, [])
+        if a and b: add(name, b, a, _nrmse(a, b))
+    for metric in ("p99_to_median", "top_1pct_volume_share"):
+        sv=sim.get("trade_size_tail", {}).get(metric); tv=target.get("trade_size_tail", {}).get(metric)
+        if sv is not None and tv is not None: add("trade_size_tail_" + metric, tv, sv, abs(sv-tv)/(abs(tv)+EPS))
+    sv=sim.get("spread_one_tick_share"); tv=target.get("spread_one_tick_share")
+    if sv is not None and tv is not None: add("spread_one_tick_share", tv, sv, abs(sv-tv)/(abs(tv)+EPS))
+    for metric in ("slope", "r2"):
+        sv=sim.get("ofi_response", {}).get(metric); tv=target.get("ofi_response", {}).get(metric)
+        if sv is not None and tv is not None: add("ofi_" + metric, tv, sv, abs(sv-tv)/(abs(tv)+EPS))
+    for metric in ("sign_memory_exponent", "response_monotone_fraction"):
+        sv=sim.get(metric); tv=target.get(metric)
+        if sv is not None and tv is not None: add(metric, tv, sv, abs(sv-tv)/(abs(tv)+EPS))
+    for side in ("bid", "ask"):
+        sv=sim.get("depth_shape", {}).get(side + "_monotone_fraction")
+        tv=target.get("depth_shape_" + side)
+        if sv is not None and tv is not None: add("depth_shape_" + side, tv, sv, abs(sv-tv)/(abs(tv)+EPS))
     common=sorted(set(sim.get("clock_response",{}))&set(target.get("clock_response",{})),key=int)
     if common:
         a=[sim["clock_response"][x] for x in common];b=[target["clock_response"][x] for x in common]

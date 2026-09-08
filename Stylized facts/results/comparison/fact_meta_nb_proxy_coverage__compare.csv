@@ -1,0 +1,15 @@
+regime,variant,method,seed,input_orders,assigned_orders,assigned_share
+normal,current_run,local_runs,7,161702,152267,0.941652
+normal,random_n6,random_traders,7,161702,161702,1
+normal,random_n6,random_traders,23,161702,161702,1
+normal,random_n6,random_traders,71,161702,161702,1
+normal,maitrier_threshold,time_threshold,7,161702,109786,0.67894
+normal,maitrier_threshold,time_threshold,23,161702,109705,0.678439
+normal,maitrier_threshold,time_threshold,71,161702,110009,0.680319
+stress,current_run,local_runs,7,195933,183904,0.938607
+stress,random_n6,random_traders,7,195933,195933,1
+stress,random_n6,random_traders,23,195933,195933,1
+stress,random_n6,random_traders,71,195933,195933,1
+stress,maitrier_threshold,time_threshold,7,195933,128252,0.654571
+stress,maitrier_threshold,time_threshold,23,195933,128249,0.654555
+stress,maitrier_threshold,time_threshold,71,195933,128278,0.654703

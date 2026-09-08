@@ -1,0 +1,310 @@
+{
+  "generated_on": "2026-09-06",
+  "headline": {
+    "facts": 12,
+    "gate_metrics": 10,
+    "validation_seeds": 10,
+    "worst_distance": 0.8806418312163956,
+    "tolerance": 1.0
+  },
+  "architecture": [
+    {
+      "name": "背景订单流智能体",
+      "role": "生成市场自身的成交流",
+      "mechanisms": [
+        "Hawkes 聚集到达过程",
+        "多时间尺度订单符号长记忆",
+        "对数正态叠加帕累托的重尾成交规模"
+      ],
+      "facts": [
+        "成交到达聚集",
+        "订单符号长记忆",
+        "成交规模重尾"
+      ]
+    },
+    {
+      "name": "做市与流动性智能体",
+      "role": "提供并补充盘口深度",
+      "mechanisms": [
+        "8 档驼峰形深度剖面",
+        "库存与流动压力驱动的报价偏移",
+        "队列失衡响应与整数跳动价差控制"
+      ],
+      "facts": [
+        "价差分布与状态",
+        "盘口深度形态",
+        "订单流失衡响应"
+      ]
+    },
+    {
+      "name": "执行算法智能体",
+      "role": "被评估的清算算法",
+      "mechanisms": [
+        "按子单决策函数拆分母单",
+        "与同种子无执行对照市场配对运行",
+        "资产、数据与算法均可替换接入"
+      ],
+      "facts": [
+        "元订单冲击标度律",
+        "冲击轨迹与衰减"
+      ]
+    }
+  ],
+  "market": {
+    "venue": "Kraken",
+    "symbol": "BTC/USD",
+    "window": "2026-07-05 → 2026-07-18",
+    "raw_rows": 166008529,
+    "canonical_events": 1480003,
+    "trades": 568932,
+    "quotes": 911071,
+    "sessions": 13,
+    "calibration_sessions": 10,
+    "validation_sessions": 3,
+    "trials": 80,
+    "best_loss": 1.7523627315008494,
+    "search": "Optuna TPE"
+  },
+  "impact_law": {
+    "delta": 0.4987377969789553,
+    "target_delta": 0.5,
+    "power_r2": 0.999997233726509,
+    "linear_r2": 0.9669928283024467,
+    "distance_from_half": 0.0012622030210446833,
+    "coefficient": 0.006000739333128154,
+    "runs": 48,
+    "durations": [
+      120.0,
+      300.0,
+      600.0
+    ],
+    "sides": [
+      "BUY",
+      "SELL"
+    ],
+    "curve": [
+      {
+        "participation": 0.001,
+        "impact_bp": 1.9811090615918905,
+        "std_bp": 1.4413500678066773,
+        "n": 6
+      },
+      {
+        "participation": 0.0025,
+        "impact_bp": 3.0191424124037725,
+        "std_bp": 2.1174067044128013,
+        "n": 6
+      },
+      {
+        "participation": 0.005,
+        "impact_bp": 4.247385670391954,
+        "std_bp": 2.9580477658275006,
+        "n": 6
+      },
+      {
+        "participation": 0.01,
+        "impact_bp": 6.025082155753614,
+        "std_bp": 4.211253104797699,
+        "n": 6
+      },
+      {
+        "participation": 0.02,
+        "impact_bp": 8.547656833652091,
+        "std_bp": 5.99311026212068,
+        "n": 6
+      },
+      {
+        "participation": 0.05,
+        "impact_bp": 13.468606850355371,
+        "std_bp": 9.413727777317717,
+        "n": 6
+      },
+      {
+        "participation": 0.1,
+        "impact_bp": 19.034079219515885,
+        "std_bp": 13.35993612434314,
+        "n": 6
+      },
+      {
+        "participation": 0.2,
+        "impact_bp": 26.87383629625314,
+        "std_bp": 18.933245116863993,
+        "n": 6
+      }
+    ]
+  },
+  "facts": [
+    {
+      "id": "P0-V1",
+      "group": "impact",
+      "name": "元订单冲击平方根律",
+      "name_en": "Metaorder square-root impact",
+      "why": "决定大额母单的冲击成本随规模如何增长，是 TCA 最核心的定价关系。",
+      "value": "δ = 0.499",
+      "target": "理论值 0.5",
+      "detail": "幂律拟合 R² = 0.999997，48 组配对干预实验"
+    },
+    {
+      "id": "P0-V2",
+      "group": "impact",
+      "name": "冲击轨迹凹性",
+      "name_en": "Impact trajectory concavity",
+      "why": "决定同一母单在执行过程中冲击如何累积，影响拆单节奏设计。",
+      "value": "单调递增且凹",
+      "target": "参考文献形态",
+      "detail": "冲击从 1.98 bp（0.1% 参与率）升至 26.87 bp（20%）"
+    },
+    {
+      "id": "P0-V3",
+      "group": "impact",
+      "name": "执行后冲击衰减",
+      "name_en": "Post-metaorder decay",
+      "why": "区分暂时冲击与永久冲击，决定实现成本中可回收的部分。",
+      "value": "留存 105% / 106% / 106%",
+      "target": "执行后冲击趋于稳定",
+      "detail": "执行结束 30 / 60 / 120 秒相对终点冲击，呈以永久冲击为主的平台形态"
+    },
+    {
+      "id": "P0-V4",
+      "group": "impact",
+      "name": "冲击曲面（规模 × 时域）",
+      "name_en": "Impact surface",
+      "why": "把冲击写成规模与时间的函数，是执行时限选择的依据。",
+      "value": "斜率 0.31 / 0.30 / 0.18 / 0.20",
+      "target": "随时域递减",
+      "detail": "1 / 5 / 30 / 60 秒前瞻窗口上的规模—冲击对数斜率"
+    },
+    {
+      "id": "P0-C5",
+      "group": "liquidity",
+      "name": "流动性成本与盘口深度",
+      "name_en": "Liquidity cost / depth",
+      "why": "决定吃单穿透多少档位，直接对应滑点。",
+      "value": "深度形态偏差 0.107 / 0.107",
+      "target": "Kraken 多档深度剖面",
+      "detail": "买 / 卖两侧 8 档驼峰形深度剖面，决定吃单穿透档位与滑点"
+    },
+    {
+      "id": "P0-C6",
+      "group": "liquidity",
+      "name": "价差分布与状态",
+      "name_en": "Spread distribution / state",
+      "why": "价差是每一笔子单都要支付的基础成本。",
+      "value": "一档价差占比 98.9%",
+      "target": "真实 97.6%",
+      "detail": "归一化距离 0.015"
+    },
+    {
+      "id": "P0-C7",
+      "group": "liquidity",
+      "name": "流动性弹性恢复",
+      "name_en": "Liquidity resiliency",
+      "why": "决定被吃掉的深度多快补回，是拆单间隔的物理约束。",
+      "value": "30 秒内价差回补至基准",
+      "target": "冲击后流动性回补",
+      "detail": "1 / 5 / 30 秒探针的价差变化 0.086 / 0.065 / 0.000 USD"
+    },
+    {
+      "id": "P0-C8",
+      "group": "flow",
+      "name": "订单流失衡响应（OFI）",
+      "name_en": "Order-flow-imbalance response",
+      "why": "把盘口失衡转成价格变化，是执行择时信号的来源。",
+      "value": "斜率 1.13，R² 0.50",
+      "target": "正斜率且具解释力",
+      "detail": "归一化距离 0.289 / 0.171"
+    },
+    {
+      "id": "P0-C9",
+      "group": "flow",
+      "name": "成交响应函数",
+      "name_en": "Trade response function",
+      "why": "单笔成交的平均价格响应，是冲击模型的微观基础。",
+      "value": "单调比例距离 0.172",
+      "target": "随成交笔数单调上升",
+      "detail": "R(1) = 0.893（模拟价格单位）"
+    },
+    {
+      "id": "P0-C10",
+      "group": "flow",
+      "name": "订单符号长记忆",
+      "name_en": "Order-sign long memory",
+      "why": "解释为什么冲击是凹的：符号自相关使后续子单成本被前序子单预告。",
+      "value": "γ = 0.503",
+      "target": "0 < γ < 1 的幂律衰减",
+      "detail": "C(1) = 0.245，C(100) = 0.0083"
+    },
+    {
+      "id": "P0-C11",
+      "group": "price",
+      "name": "价格扩散性",
+      "name_en": "Diffusive prices",
+      "why": "保证在冲击之外价格没有可套利漂移，避免高估或低估执行成本。",
+      "value": "方差比 1.00 / 1.06 / 1.16",
+      "target": "接近 1.0",
+      "detail": "1 / 5 / 10 秒时标；60 秒时标为 1.76，长时域保留趋势成分"
+    },
+    {
+      "id": "P1-16",
+      "group": "flow",
+      "name": "成交规模重尾",
+      "name_en": "Heavy-tailed trade size",
+      "why": "决定队列被瞬间清空的概率，是尾部执行风险的来源。",
+      "value": "p99/中位数 = 661",
+      "target": "真实 700",
+      "detail": "前 1% 成交量占比 33.1%，归一化距离 0.268"
+    }
+  ],
+  "gate": [
+    {
+      "metric": "sign_memory_exponent",
+      "distance": 0.8806418312163956,
+      "seed_std": 0.24897821272030293
+    },
+    {
+      "metric": "arrival_clustering",
+      "distance": 0.7787665654514925,
+      "seed_std": 0.21928652961905543
+    },
+    {
+      "metric": "ofi_slope",
+      "distance": 0.28851127648998276,
+      "seed_std": 0.21108745765575312
+    },
+    {
+      "metric": "trade_size_tail_p99_to_median",
+      "distance": 0.26814134036024406,
+      "seed_std": 0.18564900704238999
+    },
+    {
+      "metric": "trade_size_tail_top_1pct_volume_share",
+      "distance": 0.26751242920882495,
+      "seed_std": 0.1379084225458217
+    },
+    {
+      "metric": "response_monotone_fraction",
+      "distance": 0.1720693886685235,
+      "seed_std": 0.06622383601955219
+    },
+    {
+      "metric": "ofi_r2",
+      "distance": 0.17096703841158312,
+      "seed_std": 0.11735466204443105
+    },
+    {
+      "metric": "depth_shape_ask",
+      "distance": 0.10714285580357145,
+      "seed_std": 0.0
+    },
+    {
+      "metric": "depth_shape_bid",
+      "distance": 0.10714285580357145,
+      "seed_std": 0.0
+    },
+    {
+      "metric": "spread_one_tick_share",
+      "distance": 0.014597433663688805,
+      "seed_std": 0.006579201469306732
+    }
+  ]
+}

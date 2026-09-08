@@ -1,0 +1,3 @@
+bar_seconds,n_bars,acf_lag1,mean_abs_acf_lags_2_20,noise_floor,variance_ratio_k10plus
+1,604798,0.088139,0.0126472,0.00252029,1.68627
+60,10079,0.03819,0.00798802,0.019523,0.944521

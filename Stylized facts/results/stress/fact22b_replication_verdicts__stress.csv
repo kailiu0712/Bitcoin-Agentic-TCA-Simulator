@@ -1,0 +1,7 @@
+source,claim,observed_ratio,baseline_ratio,excess_pct,sem_across_days,sigma_vs_across_day_noise,replicated
+"Muravyev & Picard (2022), Financial Management",activity concentrated in the first 100 ms of the second,1.05242,0.994175,5.85869,0.0382415,1.5231,False
+"Shynkevich (2026), Applied Economics Letters",trade count rises in the FIRST second of the minute,1.25612,1.00039,25.5624,0.0165776,15.4259,True
+"Shynkevich (2026), Applied Economics Letters",trade count rises in the LAST second of the minute,0.721172,1.00039,-27.9111,0.0200653,-13.9156,False
+"The Quarter-Hour Effect, arXiv:2607.09426",quarter-hour openings carry ~26% more trades,1.3254,0.976757,35.6942,0.0331546,10.5157,True
+"The Quarter-Hour Effect, arXiv:2607.09426",  ... of which: top of the hour (minute 0) alone,2.14821,0.976757,119.933,0.0931236,12.5795,True
+"The Quarter-Hour Effect, arXiv:2607.09426","  ... of which: minutes 15, 30, 45 alone",1.05113,0.976757,7.61462,0.0314742,2.36309,True

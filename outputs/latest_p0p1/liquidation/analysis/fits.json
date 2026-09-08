@@ -1,0 +1,23 @@
+[
+  {
+    "A": 0.006000739333128154,
+    "delta": 0.4987377969789553,
+    "ci_low": 0.4987377969789553,
+    "ci_high": 0.4987377969789553,
+    "power_r2": 0.999997233726509,
+    "linear_r2": 0.9669928283024467,
+    "n": 48,
+    "fit_min_participation": 0.01,
+    "all_grid_delta": 0.49518915857874,
+    "distance_from_half": 0.0012622030210446833,
+    "impact_at_1pct": 0.0006025082155753614,
+    "impact_at_5pct": 0.001346860685035537,
+    "strategy": "twap",
+    "mean_shortfall": 0.0004964725547216051,
+    "shortfall_std": 0.0012883757748736438,
+    "mean_paired_cost": 0.000496472554721587,
+    "mean_penalized_cost": 0.000496472554721587,
+    "completion_rate": 1.0,
+    "minimum_completion": 1.0
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "settings": {
+    "trader_counts": [
+      6,
+      20
+    ],
+    "mean_wait_seconds": [
+      5.0,
+      20.0
+    ],
+    "mu": 1.5,
+    "max_children": 1000,
+    "max_target_delay_s": 4.0,
+    "seeds": [
+      7,
+      23,
+      71
+    ],
+    "max_quote_age_s": 30.0
+  },
+  "regimes": {
+    "normal": {
+      "start_date": "2026-07-18",
+      "end_date": "2026-07-24",
+      "label": "Normal (18-24 Jul 2026)",
+      "color": "#2C6FBB"
+    },
+    "stress": {
+      "start_date": "2026-07-26",
+      "end_date": "2026-08-02",
+      "label": "Stress (26 Jul - 2 Aug 2026)",
+      "color": "#C0392B"
+    }
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\cache\\normal\\trades.parquet",
+      "bytes": 50901242,
+      "mtime_ns": 1787978556000000000
+    },
+    {
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\cache\\normal\\fills.parquet",
+      "bytes": 5554284,
+      "mtime_ns": 1787978556000000000
+    },
+    {
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\cache\\normal\\quotes.parquet",
+      "bytes": 126506703,
+      "mtime_ns": 1787978556000000000
+    },
+    {
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\cache\\stress\\trades.parquet",
+      "bytes": 62975997,
+      "mtime_ns": 1787978726000000000
+    },
+    {
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\cache\\stress\\fills.parquet",
+      "bytes": 5925648,
+      "mtime_ns": 1787978726000000000
+    },
+    {
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\cache\\stress\\quotes.parquet",
+      "bytes": 173803899,
+      "mtime_ns": 1787978726000000000
+    }
+  ],
+  "code_sha256": {
+    "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\sffacts\\fact_meta_compare.py": "e24fadaf74f7967b937dae7f404470aac5fba1b9e7a757ed96d70e3f830a12b5",
+    "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\sfcore\\metaorder_proxies.py": "171d7073d5b02cbbcce13720336a89b064a60616c73a6df96cfc69f31bdf8171",
+    "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\config.py": "b114ee04781c0f9f9437f3fd84ca62691adc7be7f974537fb2a51a1f774e54af"
+  },
+  "endpoint": "pre-mid at next strictly later aggressive-order timestamp; also export +100ms",
+  "normalization": "matched daily order volume; daily pre-mid range / first mid",
+  "uncertainty": "sem_iid is descriptive only; seed SD is construction sensitivity, not market CI",
+  "threshold_semantics": "forward scan, jumped rows unassigned, P(s) proportional s^(-1-mu), phi=1/mean_wait_s, target overshoot cutoff in seconds"
+}

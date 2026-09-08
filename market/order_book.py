@@ -5,10 +5,12 @@ from collections import defaultdict, deque
 class OrderBook:
     """Small price-time-priority LOB. Empty heap entries are removed lazily."""
 
-    def __init__(self):
+    def __init__(self, tick_size=0.1, profile_levels=8):
         self.orders = {}
         self.levels = {"BUY": defaultdict(deque), "SELL": defaultdict(deque)}
         self.heaps = {"BUY": [], "SELL": []}
+        self.tick_size = float(tick_size)
+        self.profile_levels = int(profile_levels)
 
     def add(self, order):
         if order.is_market:
@@ -65,10 +67,24 @@ class OrderBook:
         if order.remaining <= 1e-12:
             self.orders.pop(order.order_id, None)
 
-    def state(self):
+    def state(self, include_profile=False):
         bid, ask = self.best_price("BUY"), self.best_price("SELL")
         mid = (bid + ask) / 2 if bid is not None and ask is not None else None
-        return {"best_bid": bid, "best_ask": ask, "bid_size": self.depth("BUY", bid),
-                "ask_size": self.depth("SELL", ask), "mid": mid,
-                "spread": ask - bid if bid is not None and ask is not None else None}
+        state = {"best_bid": bid, "best_ask": ask, "bid_size": self.depth("BUY", bid),
+                 "ask_size": self.depth("SELL", ask), "mid": mid,
+                 "spread": ask - bid if bid is not None and ask is not None else None}
+        if not include_profile:
+            return state
+        def profile(side):
+            anchor = self.best_price(side)
+            if anchor is None:
+                return []
+            step = self.tick_size
+            values = []
+            for level in range(self.profile_levels):
+                price = round(anchor - level * step if side == "BUY" else anchor + level * step, 10)
+                values.append(self.depth(side, price))
+            return values
+        state.update({"bid_depth_profile": profile("BUY"), "ask_depth_profile": profile("SELL")})
+        return state
 

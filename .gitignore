@@ -8,5 +8,9 @@ venv/
 .DS_Store
 data/raw/
 data/processed/
+data/*.parquet
 outputs/legacy/
 *.log
+demo_no_voice.mp4
+submission/assets/cache/
+Stylized facts/cache/

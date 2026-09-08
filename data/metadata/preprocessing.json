@@ -1,0 +1,13 @@
+{
+  "2026-07-18": {
+    "source_rows": 5000510,
+    "delete_unknown_order": 184,
+    "upserts_existing_order": 1371342,
+    "trades": 30548,
+    "duplicate_trade_id": 191,
+    "crossed_or_locked_samples": 213818,
+    "snapshot_resets": 5,
+    "snapshot_rows": 1191,
+    "output_rows": 218544
+  }
+}

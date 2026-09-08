@@ -1,0 +1,1617 @@
+{
+  "generated": "2026-09-05T21:21:38",
+  "runtime": {
+    "ingest_seconds": 0.00022260000696405768,
+    "analysis_seconds": 406.2827054000081
+  },
+  "outputs": [
+    {
+      "kind": "table",
+      "fact": "fact00",
+      "slug": "snapshot_agreement",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact00_snapshot_agreement__normal.csv",
+      "caption": "Reconstruction vs exchange snapshot blocks - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact00",
+      "slug": "snapshot_agreement",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact00_snapshot_agreement__stress.csv",
+      "caption": "Reconstruction vs exchange snapshot blocks - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact00",
+      "slug": "feed_and_reconstruction_diagnostics",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact00_feed_and_reconstruction_diagnostics__compare.csv",
+      "caption": "Feed integrity and reconstruction health"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact00",
+      "slug": "reconstruction_validation",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact00_reconstruction_validation__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "cost_curve",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact05_cost_curve__normal.csv",
+      "caption": "Virtual market-order cost, time-weighted over all book states - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "depth_bands",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact05_depth_bands__normal.csv",
+      "caption": "Mean cumulative visible depth by price band - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact05",
+      "slug": "liquidity_cost_and_depth",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact05_liquidity_cost_and_depth__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "cost_curve",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact05_cost_curve__stress.csv",
+      "caption": "Virtual market-order cost, time-weighted over all book states - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "depth_bands",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact05_depth_bands__stress.csv",
+      "caption": "Mean cumulative visible depth by price band - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact05",
+      "slug": "liquidity_cost_and_depth",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact05_liquidity_cost_and_depth__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact05",
+      "slug": "liquidity_cost_and_depth",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact05_liquidity_cost_and_depth__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "cost_curve",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact05_cost_curve__compare.csv",
+      "caption": "Virtual market-order cost curve, both regimes"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact06_spread_distribution__normal.csv",
+      "caption": "Quoted-spread distribution (bps) - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "hourly_profile",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact06_hourly_profile__normal.csv",
+      "caption": "Time-weighted hourly spread / depth profile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "state_dependence",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact06_state_dependence__normal.csv",
+      "caption": "Spread conditional on book state - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact06_spread_distribution__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact06_spread_distribution__stress.csv",
+      "caption": "Quoted-spread distribution (bps) - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "hourly_profile",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact06_hourly_profile__stress.csv",
+      "caption": "Time-weighted hourly spread / depth profile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "state_dependence",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact06_state_dependence__stress.csv",
+      "caption": "Spread conditional on book state - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact06_spread_distribution__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact06_spread_distribution__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "event_time_recovery_large",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact07_event_time_recovery_large__normal.csv",
+      "caption": "Recovery after large orders, event time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "clock_time_recovery_large",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact07_clock_time_recovery_large__normal.csv",
+      "caption": "Recovery after large orders, clock time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact07",
+      "slug": "resiliency",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact07_resiliency__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "event_time_recovery_large",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact07_event_time_recovery_large__stress.csv",
+      "caption": "Recovery after large orders, event time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "clock_time_recovery_large",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact07_clock_time_recovery_large__stress.csv",
+      "caption": "Recovery after large orders, clock time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact07",
+      "slug": "resiliency",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact07_resiliency__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact07",
+      "slug": "resiliency",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact07_resiliency__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "ofi_response_curve",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08_ofi_response_curve__normal.csv",
+      "caption": "Mid change vs order-flow imbalance - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "impact_vs_depth",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08_impact_vs_depth__normal.csv",
+      "caption": "OFI impact coefficient by depth quartile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08",
+      "slug": "ofi_response",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08_ofi_response__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "ofi_response_curve",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08_ofi_response_curve__stress.csv",
+      "caption": "Mid change vs order-flow imbalance - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "impact_vs_depth",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08_impact_vs_depth__stress.csv",
+      "caption": "OFI impact coefficient by depth quartile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08",
+      "slug": "ofi_response",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08_ofi_response__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08",
+      "slug": "ofi_response",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact08_ofi_response__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_function",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09_response_function__normal.csv",
+      "caption": "Trade response R(l) in aggressive-order time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_by_size",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09_response_by_size__normal.csv",
+      "caption": "R(l) by aggressive-order size quintile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09",
+      "slug": "trade_response",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09_trade_response__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_function",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09_response_function__stress.csv",
+      "caption": "Trade response R(l) in aggressive-order time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_by_size",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09_response_by_size__stress.csv",
+      "caption": "R(l) by aggressive-order size quintile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09",
+      "slug": "trade_response",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09_trade_response__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09",
+      "slug": "trade_response",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact09_trade_response__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact10",
+      "slug": "sign_autocorrelation",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact10_sign_autocorrelation__normal.csv",
+      "caption": "Order-sign autocorrelation - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact10",
+      "slug": "sign_memory",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact10_sign_memory__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact10",
+      "slug": "sign_autocorrelation",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact10_sign_autocorrelation__stress.csv",
+      "caption": "Order-sign autocorrelation - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact10",
+      "slug": "sign_memory",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact10_sign_memory__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact10",
+      "slug": "sign_memory",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact10_sign_memory__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "return_autocorrelation",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact11_return_autocorrelation__normal.csv",
+      "caption": "Return autocorrelation - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "variance_ratio",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact11_variance_ratio__normal.csv",
+      "caption": "Variance ratios in event time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "clock_time_diffusivity",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact11_clock_time_diffusivity__normal.csv",
+      "caption": "Clock-bar return diagnostics - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact11",
+      "slug": "diffusion",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact11_diffusion__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "return_autocorrelation",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact11_return_autocorrelation__stress.csv",
+      "caption": "Return autocorrelation - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "variance_ratio",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact11_variance_ratio__stress.csv",
+      "caption": "Variance ratios in event time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "clock_time_diffusivity",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact11_clock_time_diffusivity__stress.csv",
+      "caption": "Clock-bar return diagnostics - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact11",
+      "slug": "diffusion",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact11_diffusion__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact11",
+      "slug": "diffusion",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact11_diffusion__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "book_state_by_size_decile",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact12_book_state_by_size_decile__normal.csv",
+      "caption": "Book state seen by each order-size decile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "pre_trade_liquidity_large",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact12_pre_trade_liquidity_large__normal.csv",
+      "caption": "Liquidity before large orders - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact12",
+      "slug": "selective_liquidity",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact12_selective_liquidity__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "book_state_by_size_decile",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact12_book_state_by_size_decile__stress.csv",
+      "caption": "Book state seen by each order-size decile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "pre_trade_liquidity_large",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact12_pre_trade_liquidity_large__stress.csv",
+      "caption": "Liquidity before large orders - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact12",
+      "slug": "selective_liquidity",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact12_selective_liquidity__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact12",
+      "slug": "selective_liquidity",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact12_selective_liquidity__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "imbalance_response",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact13_imbalance_response__normal.csv",
+      "caption": "Forward mid move by queue-imbalance bin - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "predictive_power",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact13_predictive_power__normal.csv",
+      "caption": "Queue-imbalance predictive power by horizon - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact13",
+      "slug": "queue_imbalance",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact13_queue_imbalance__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "imbalance_response",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact13_imbalance_response__stress.csv",
+      "caption": "Forward mid move by queue-imbalance bin - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "predictive_power",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact13_predictive_power__stress.csv",
+      "caption": "Queue-imbalance predictive power by horizon - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact13",
+      "slug": "queue_imbalance",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact13_queue_imbalance__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact13",
+      "slug": "queue_imbalance",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact13_queue_imbalance__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "abs_return_acf_event_time",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact14_abs_return_acf_event_time__normal.csv",
+      "caption": "Absolute-return ACF in quote-event time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "clock_time_decay",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact14_clock_time_decay__normal.csv",
+      "caption": "Squared-return ACF decay by bar length - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact14",
+      "slug": "volatility_clustering",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact14_volatility_clustering__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "abs_return_acf_event_time",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact14_abs_return_acf_event_time__stress.csv",
+      "caption": "Absolute-return ACF in quote-event time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "clock_time_decay",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact14_clock_time_decay__stress.csv",
+      "caption": "Squared-return ACF decay by bar length - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact14",
+      "slug": "volatility_clustering",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact14_volatility_clustering__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact14",
+      "slug": "volatility_clustering",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact14_volatility_clustering__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "size_distribution",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact16_size_distribution__normal.csv",
+      "caption": "Trade-size distribution - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "round_number_clustering",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact16_round_number_clustering__normal.csv",
+      "caption": "Round-number clustering of aggressive-order size - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact16",
+      "slug": "trade_size",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact16_trade_size__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "size_distribution",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact16_size_distribution__stress.csv",
+      "caption": "Trade-size distribution - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "round_number_clustering",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact16_round_number_clustering__stress.csv",
+      "caption": "Round-number clustering of aggressive-order size - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact16",
+      "slug": "trade_size",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact16_trade_size__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact16",
+      "slug": "trade_size",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact16_trade_size__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact17",
+      "slug": "hourly_profile",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact17_hourly_profile__normal.csv",
+      "caption": "Hour-of-day liquidity and activity - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact17",
+      "slug": "time_of_day",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact17_time_of_day__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact17",
+      "slug": "hourly_profile",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact17_hourly_profile__stress.csv",
+      "caption": "Hour-of-day liquidity and activity - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact17",
+      "slug": "time_of_day",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact17_time_of_day__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact17",
+      "slug": "time_of_day",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact17_time_of_day__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_vs_size",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact01_03_impact_vs_size__normal.csv",
+      "caption": "Pseudo-metaorder impact vs relative size - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_trajectory",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact01_03_impact_trajectory__normal.csv",
+      "caption": "Impact along the execution trajectory - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_decay",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact01_03_impact_decay__normal.csv",
+      "caption": "Post-completion impact decay - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "pseudo_metaorder_population",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact01_03_pseudo_metaorder_population__normal.csv",
+      "caption": "Pseudo-metaorder population summary - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact01_03",
+      "slug": "metaorder_impact_proxy",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact01_03_metaorder_impact_proxy__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_vs_size",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact01_03_impact_vs_size__stress.csv",
+      "caption": "Pseudo-metaorder impact vs relative size - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_trajectory",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact01_03_impact_trajectory__stress.csv",
+      "caption": "Impact along the execution trajectory - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_decay",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact01_03_impact_decay__stress.csv",
+      "caption": "Post-completion impact decay - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "pseudo_metaorder_population",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact01_03_pseudo_metaorder_population__stress.csv",
+      "caption": "Pseudo-metaorder population summary - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact01_03",
+      "slug": "metaorder_impact_proxy",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact01_03_metaorder_impact_proxy__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact01_03",
+      "slug": "metaorder_impact_proxy",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact01_03_metaorder_impact_proxy__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_compare",
+      "slug": "comparison",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\metaorder_comparison\\comparison.csv",
+      "caption": "Two published proxy constructions and harmonized run baseline"
+    },
+    {
+      "kind": "table",
+      "fact": "fact18",
+      "slug": "volatility_scaling",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact18_volatility_scaling__normal.csv",
+      "caption": "sigma(tau) on a 100 ms grid - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact18",
+      "slug": "volatility_scaling",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact18_volatility_scaling__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact18",
+      "slug": "volatility_scaling",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact18_volatility_scaling__stress.csv",
+      "caption": "sigma(tau) on a 100 ms grid - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact18",
+      "slug": "volatility_scaling",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact18_volatility_scaling__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact18",
+      "slug": "volatility_scaling",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact18_volatility_scaling__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact19",
+      "slug": "arrivals",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact19_arrivals__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact19",
+      "slug": "arrivals",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact19_arrivals__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact19",
+      "slug": "market_summary_statistics",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact19_market_summary_statistics__compare.csv",
+      "caption": "ZJ p3 summary statistics, time-weighted over all packets"
+    },
+    {
+      "kind": "table",
+      "fact": "fact19",
+      "slug": "interarrival_statistics",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact19_interarrival_statistics__compare.csv",
+      "caption": "Interarrival statistics by event stream"
+    },
+    {
+      "kind": "table",
+      "fact": "fact19",
+      "slug": "count_dispersion",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact19_count_dispersion__normal.csv",
+      "caption": "Fano factor of event counts by window length"
+    },
+    {
+      "kind": "table",
+      "fact": "fact19",
+      "slug": "count_dispersion",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact19_count_dispersion__stress.csv",
+      "caption": "Fano factor of event counts by window length"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact19",
+      "slug": "arrivals",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact19_arrivals__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact20",
+      "slug": "spread_in_ticks",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact20_spread_in_ticks__normal.csv",
+      "caption": "Spread distribution in ticks - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact20",
+      "slug": "l1_depth_distribution",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact20_l1_depth_distribution__normal.csv",
+      "caption": "Time-weighted L1 depth distribution - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact20",
+      "slug": "depth_profile",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact20_depth_profile__normal.csv",
+      "caption": "Incremental depth per bps shell - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact20",
+      "slug": "book_shape",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact20_book_shape__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact20",
+      "slug": "zj_style_depth",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact20_zj_style_depth__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact20",
+      "slug": "spread_in_ticks",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact20_spread_in_ticks__stress.csv",
+      "caption": "Spread distribution in ticks - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact20",
+      "slug": "l1_depth_distribution",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact20_l1_depth_distribution__stress.csv",
+      "caption": "Time-weighted L1 depth distribution - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact20",
+      "slug": "depth_profile",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact20_depth_profile__stress.csv",
+      "caption": "Incremental depth per bps shell - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact20",
+      "slug": "book_shape",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact20_book_shape__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact20",
+      "slug": "zj_style_depth",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact20_zj_style_depth__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact20",
+      "slug": "book_shape",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact20_book_shape__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08b",
+      "slug": "ofi_tfi_models",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08b_ofi_tfi_models__normal.csv",
+      "caption": "Clock-window OFI / TFI / joint regressions - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08b",
+      "slug": "beta_vs_inverse_depth",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08b_beta_vs_inverse_depth__normal.csv",
+      "caption": "OFI slope by L1-depth quintile at 10s - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08b",
+      "slug": "ofi_tfi",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08b_ofi_tfi__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08b",
+      "slug": "ofi_tfi_models",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08b_ofi_tfi_models__stress.csv",
+      "caption": "Clock-window OFI / TFI / joint regressions - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08b",
+      "slug": "beta_vs_inverse_depth",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08b_beta_vs_inverse_depth__stress.csv",
+      "caption": "OFI slope by L1-depth quintile at 10s - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08b",
+      "slug": "ofi_tfi",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08b_ofi_tfi__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08b",
+      "slug": "ofi_tfi",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact08b_ofi_tfi__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08c",
+      "slug": "realtime_ofi",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08c_realtime_ofi__normal.csv",
+      "caption": "Real-time OFI: beta, t-stat and R2 by horizon (event-time rows for reference) - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08c",
+      "slug": "tfi_definitions",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08c_tfi_definitions__normal.csv",
+      "caption": "TFI under four definitions, same windows - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08c",
+      "slug": "realtime_ofi_tfi",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact08c_realtime_ofi_tfi__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08c",
+      "slug": "realtime_ofi",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08c_realtime_ofi__stress.csv",
+      "caption": "Real-time OFI: beta, t-stat and R2 by horizon (event-time rows for reference) - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08c",
+      "slug": "tfi_definitions",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08c_tfi_definitions__stress.csv",
+      "caption": "TFI under four definitions, same windows - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08c",
+      "slug": "realtime_ofi_tfi",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact08c_realtime_ofi_tfi__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08c",
+      "slug": "realtime_ofi_tfi",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact08c_realtime_ofi_tfi__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact09b",
+      "slug": "lag_impact_usd",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09b_lag_impact_usd__normal.csv",
+      "caption": "R(l) in USD and bps, lags 1-80 - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09b",
+      "slug": "impact_by_normalised_volume",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09b_impact_by_normalised_volume__normal.csv",
+      "caption": "R(v,1) vs v / V_best - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09b",
+      "slug": "sign_conditioned_response",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09b_sign_conditioned_response__normal.csv",
+      "caption": "R+-(l) by previous-sign agreement - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09b",
+      "slug": "conditional_response",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact09b_conditional_response__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact09b",
+      "slug": "lag_impact_usd",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09b_lag_impact_usd__stress.csv",
+      "caption": "R(l) in USD and bps, lags 1-80 - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09b",
+      "slug": "impact_by_normalised_volume",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09b_impact_by_normalised_volume__stress.csv",
+      "caption": "R(v,1) vs v / V_best - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09b",
+      "slug": "sign_conditioned_response",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09b_sign_conditioned_response__stress.csv",
+      "caption": "R+-(l) by previous-sign agreement - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09b",
+      "slug": "conditional_response",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact09b_conditional_response__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09b",
+      "slug": "conditional_response",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact09b_conditional_response__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_current_run_seed7",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_current_run_seed7__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_random_n6_seed7",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_random_n6_seed7__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_random_n6_seed23",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_random_n6_seed23__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_random_n6_seed71",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_random_n6_seed71__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_maitrier_threshold_seed7",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_maitrier_threshold_seed7__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_maitrier_threshold_seed23",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_maitrier_threshold_seed23__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_maitrier_threshold_seed71",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_battery_maitrier_threshold_seed71__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_current_run_seed7",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_current_run_seed7__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_random_n6_seed7",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_random_n6_seed7__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_random_n6_seed23",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_random_n6_seed23__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_random_n6_seed71",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_random_n6_seed71__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_maitrier_threshold_seed7",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_maitrier_threshold_seed7__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_maitrier_threshold_seed23",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_maitrier_threshold_seed23__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "battery_maitrier_threshold_seed71",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_battery_maitrier_threshold_seed71__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_nb",
+      "slug": "proxy_battery_summary",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact_meta_nb_proxy_battery_summary__compare.csv",
+      "caption": "Every proxy.ipynb estimate, per regime / proxy / seed"
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_nb",
+      "slug": "proxy_coverage",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact_meta_nb_proxy_coverage__compare.csv",
+      "caption": "Share of aggressive orders each construction assigns"
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_nb",
+      "slug": "size_curves",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact_meta_nb_size_curves__compare.csv",
+      "caption": "size_curves for all constructions"
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_nb",
+      "slug": "duration_curves",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact_meta_nb_duration_curves__compare.csv",
+      "caption": "duration_curves for all constructions"
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_nb",
+      "slug": "trajectories",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact_meta_nb_trajectories__compare.csv",
+      "caption": "trajectories for all constructions"
+    },
+    {
+      "kind": "table",
+      "fact": "fact_meta_nb",
+      "slug": "decay_curves",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact_meta_nb_decay_curves__compare.csv",
+      "caption": "decay_curves for all constructions"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "proxy_comparison",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact_meta_nb_proxy_comparison__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact_meta_nb",
+      "slug": "proxy_comparison",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact_meta_nb_proxy_comparison__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "timing_diagnostics",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_timing_diagnostics__normal.csv",
+      "caption": "Clock hygiene, spectral search, harmonic comb and clip coverage - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "round_gap_excess",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_round_gap_excess__normal.csv",
+      "caption": "Inter-arrival counts at round intervals vs a local baseline - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "phase_periodicity",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_phase_periodicity__normal.csv",
+      "caption": "Per-day Rayleigh phase test with jitter null; controls included - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "spectral_lines_orders",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_spectral_lines_orders__normal.csv",
+      "caption": "Strongest spectral lines, aggressive orders - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "spectral_lines_quotes",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_spectral_lines_quotes__normal.csv",
+      "caption": "Strongest spectral lines, top-of-book events - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "repeated_clip_groups",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_repeated_clip_groups__normal.csv",
+      "caption": "Most regularly spaced repeated-clip groups (top 200 of 158) - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "phase_profile_by_day",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_phase_profile_by_day__normal.csv",
+      "caption": "Phase concentration at 1s, day by day - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact22",
+      "slug": "order_timing",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22_order_timing__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "timing_diagnostics",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_timing_diagnostics__stress.csv",
+      "caption": "Clock hygiene, spectral search, harmonic comb and clip coverage - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "round_gap_excess",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_round_gap_excess__stress.csv",
+      "caption": "Inter-arrival counts at round intervals vs a local baseline - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "phase_periodicity",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_phase_periodicity__stress.csv",
+      "caption": "Per-day Rayleigh phase test with jitter null; controls included - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "spectral_lines_orders",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_spectral_lines_orders__stress.csv",
+      "caption": "Strongest spectral lines, aggressive orders - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "spectral_lines_quotes",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_spectral_lines_quotes__stress.csv",
+      "caption": "Strongest spectral lines, top-of-book events - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "repeated_clip_groups",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_repeated_clip_groups__stress.csv",
+      "caption": "Most regularly spaced repeated-clip groups (top 200 of 205) - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22",
+      "slug": "phase_profile_by_day",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_phase_profile_by_day__stress.csv",
+      "caption": "Phase concentration at 2.5s, day by day - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact22",
+      "slug": "order_timing",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22_order_timing__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact22",
+      "slug": "order_timing",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact22_order_timing__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "second_of_minute",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_second_of_minute__normal.csv",
+      "caption": "Trades by second of the minute - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "minute_of_hour",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_minute_of_hour__normal.csv",
+      "caption": "Trades by minute of the hour - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "second_of_hour",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_second_of_hour__normal.csv",
+      "caption": "Trades by second of the hour - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "decile_of_second",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_decile_of_second__normal.csv",
+      "caption": "Trades by 100 ms decile of the second - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "millisecond_of_second",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_millisecond_of_second__normal.csv",
+      "caption": "Trades by millisecond of the second - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "replication_verdicts",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_replication_verdicts__normal.csv",
+      "caption": "Published claims checked on this dataset - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact22b",
+      "slug": "clock_conventions",
+      "regime": "normal",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\normal\\fact22b_clock_conventions__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "second_of_minute",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_second_of_minute__stress.csv",
+      "caption": "Trades by second of the minute - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "minute_of_hour",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_minute_of_hour__stress.csv",
+      "caption": "Trades by minute of the hour - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "second_of_hour",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_second_of_hour__stress.csv",
+      "caption": "Trades by second of the hour - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "decile_of_second",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_decile_of_second__stress.csv",
+      "caption": "Trades by 100 ms decile of the second - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "millisecond_of_second",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_millisecond_of_second__stress.csv",
+      "caption": "Trades by millisecond of the second - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact22b",
+      "slug": "replication_verdicts",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_replication_verdicts__stress.csv",
+      "caption": "Published claims checked on this dataset - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact22b",
+      "slug": "clock_conventions",
+      "regime": "stress",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\stress\\fact22b_clock_conventions__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact22b",
+      "slug": "clock_conventions",
+      "regime": "comparison",
+      "path": "C:\\Users\\kai\\liukh\\CALM\\Stylized facts\\results\\comparison\\fact22b_clock_conventions__compare.png",
+      "caption": ""
+    }
+  ]
+}

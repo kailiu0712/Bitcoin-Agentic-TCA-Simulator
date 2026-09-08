@@ -11,6 +11,7 @@ import yaml
 from agents.market_maker import MarketMakerAgent
 from agents.order_flow import OrderFlowAgent
 from analytics.stylized_facts import compute
+from analytics.plots import make_plots
 from market.exchange import Exchange
 from market.kernel import Kernel
 
@@ -18,7 +19,7 @@ from market.kernel import Kernel
 def simulate(cfg, seed=None):
     seed = cfg["seed"] if seed is None else seed
     root = np.random.SeedSequence(seed); mm_seed, of_seed = root.spawn(2)
-    ex, started = Exchange(), time.perf_counter(); kernel = Kernel(ex, seed)
+    ex, started = Exchange(cfg.get("tick_size", 0.1), cfg.get("market_maker_levels", 8)), time.perf_counter(); kernel = Kernel(ex, seed)
     mm = MarketMakerAgent(cfg, np.random.default_rng(mm_seed)); flow = OrderFlowAgent(cfg, np.random.default_rng(of_seed))
     mm.start(kernel); flow.start(kernel); kernel.run(float(cfg["duration_seconds"]))
     rows = ex.output(); df = pd.DataFrame(rows)
@@ -34,11 +35,15 @@ def simulate(cfg, seed=None):
 
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--config",default="config/default.yaml"); ap.add_argument("--seed",type=int)
+    ap=argparse.ArgumentParser(); ap.add_argument("--config",default="config/default.yaml"); ap.add_argument("--seed",type=int); ap.add_argument("--duration-seconds",type=float)
     ap.add_argument("--output-dir",default="outputs/simulation"); args=ap.parse_args()
-    config=yaml.safe_load(Path(args.config).read_text())["simulation"]; out=Path(args.output_dir); out.mkdir(parents=True,exist_ok=True)
+    config=yaml.safe_load(Path(args.config).read_text())["simulation"]
+    if args.duration_seconds is not None: config["duration_seconds"]=args.duration_seconds
+    out=Path(args.output_dir); out.mkdir(parents=True,exist_ok=True)
     df, meta=simulate(config,args.seed); df.to_parquet(out/"events.parquet",index=False)
-    metrics=compute(df); (out/"metrics.json").write_text(json.dumps(metrics,indent=2)); (out/"run_metadata.json").write_text(json.dumps(meta,indent=2))
+    metrics=compute(df); (out/"metrics.json").write_text(json.dumps(metrics,indent=2)); (out/"run_metadata.json").write_text(json.dumps(meta,indent=2)); make_plots(df,metrics,out/"plots","simulated")
+    l3_cols=[c for c in ["timestamp","event_type","agent_id","side","price","size","order_id","trade_id","best_bid","best_ask","mid","spread","bid_depth_profile","ask_depth_profile"] if c in df]
+    df[l3_cols].to_parquet(out/"simulated_l3_event_book.parquet",index=False)
     print(json.dumps(meta,indent=2))
 
 

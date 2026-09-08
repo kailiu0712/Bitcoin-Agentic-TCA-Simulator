@@ -1,0 +1,81 @@
+fact,priority,stylized_fact,metric,normal,stress,note
+fact00,validation,Data quality and book-reconstruction validation,crossed packets after repair,0,0,must be 0
+fact00,validation,Data quality and book-reconstruction validation,aggressor-side agreement (exchange-aligned),0.99206,0.98752,share of aggressive orders printing on the correct side of the pre-trade quote; compare the receipt-aligned row below
+fact00,validation,Data quality and book-reconstruction validation,"aggressor-side agreement (receipt-aligned, naive)",0.77669,0.73338,what you get without exchange-time channel alignment
+fact00,validation,Data quality and book-reconstruction validation,snapshot checks with best quotes exact,0.78125,0.738095,42 independent checks
+fact05,P0-C,Instantaneous liquidity-cost curve / cumulative LOB depth,cost-curve log-log slope (sell into bids),0.359671,0.459734,R2=0.993
+fact05,P0-C,Instantaneous liquidity-cost curve / cumulative LOB depth,cost-curve log-log slope (buy from asks),0.391319,0.457709,R2=0.984
+fact05,P0-C,Instantaneous liquidity-cost curve / cumulative LOB depth,"cost of 1 BTC (sell into bids), bps",0.796559,0.669194,
+fact05,P0-C,Instantaneous liquidity-cost curve / cumulative LOB depth,"cost of 1 BTC (buy from asks), bps",0.611326,0.573982,
+fact05,P0-C,Instantaneous liquidity-cost curve / cumulative LOB depth,"mean depth within 10 bps (BTC, both sides)",158.998,156.473,
+fact06,P0-C,Bid-ask spread distribution and state dependence,"median quoted spread (bps, time-weighted)",0.0153944,0.0158905,0.10 USD at 65k
+fact06,P0-C,Bid-ask spread distribution and state dependence,99th pct quoted spread (bps),0.544614,0.621448,39.1x the median
+fact06,P0-C,Bid-ask spread distribution and state dependence,hourly spread max/min ratio,2.38157,3.11014,U-shape test
+fact06,P0-C,Bid-ask spread distribution and state dependence,hourly spread coefficient of variation,0.264466,0.319631,
+fact07,P0-C,Liquidity resiliency after large aggressive trades,large-order size threshold (BTC),0.911644,0.853479,top 1%
+fact07,P0-C,Liquidity resiliency after large aggressive trades,spread at the next order / pre-event,1.48891,1.28213,event-time peak dislocation
+fact07,P0-C,Liquidity resiliency after large aggressive trades,spread recovery time constant (s),14.8895,8.15528,literature 6.3s; fit R2=0.58
+fact07,P0-C,Liquidity resiliency after large aggressive trades,orders until spread is back within 1% of pre-event,13,5,event-time spread resiliency
+fact07,P0-C,Liquidity resiliency after large aggressive trades,orders until consumed-side depth is back to 99%,34,21,compare with the spread row above: depth recovering later is the Schnaubelt et al. ordering
+fact08,P0-C,Order-flow imbalance -> short-horizon price response,OFI impact coefficient (bps per BTC),0.155203,0.164003,"R2=0.394, n=123,984"
+fact08,P0-C,Order-flow imbalance -> short-horizon price response,OFI / mid-change correlation,0.61292,0.627724,blocks of 50 quote events
+fact08,P0-C,Order-flow imbalance -> short-horizon price response,"impact coefficient, thinnest / thickest depth quartile",1.91257,1.952,CKS predicts > 1 (inverse in depth)
+fact09,P0-C,Trade-response function R(l),R(1) immediate response (bps),0.248228,0.269062,
+fact09,P0-C,Trade-response function R(l),R(100) (bps),0.826577,0.809461,
+fact09,P0-C,Trade-response function R(l),R(1000) (bps),0.639165,0.916746,
+fact09,P0-C,Trade-response function R(l),R(100)/R(1) growth factor,3.32992,3.00845,slow growth = adaptive liquidity absorbing persistent flow
+fact09,P0-C,Trade-response function R(l),mean effective half-spread paid (bps),0.12546,0.108304,
+fact10,P0-C,Long memory of order signs,sign-ACF decay exponent gamma (aggressive orders),0.543346,0.431409,"R2=0.774, lags 10-1000; literature ~0.6"
+fact10,P0-C,Long memory of order signs,sign-ACF decay exponent gamma (individual fills),0.656923,0.500039,R2=0.927
+fact10,P0-C,Long memory of order signs,C(1) sign autocorrelation,0.231525,0.26293,
+fact10,P0-C,Long memory of order signs,C(100) sign autocorrelation,0.0111171,0.0272911,long memory if still well above the noise floor
+fact10,P0-C,Long memory of order signs,long memory (gamma < 1),1,1,1 = yes
+fact11,P0-C,Persistent order flow with approximately diffusive prices,mid-return ACF lag 1 (quote-event time),-0.0682517,-0.0956882,95% band +/-0.0008
+fact11,P0-C,Persistent order flow with approximately diffusive prices,mid-return ACF lag 1 (aggressive-order time),0.111699,0.126277,
+fact11,P0-C,Persistent order flow with approximately diffusive prices,"trade-price change ACF lag 1, order level (raw)",0.0738354,0.0578874,sign persistence pushes this positive; see the split below
+fact11,P0-C,Persistent order flow with approximately diffusive prices,"trade-price change ACF lag 1, after a sign flip (bid-ask bounce)",-0.0114102,-0.0442627,"the Roll bounce, isolated from order-sign persistence"
+fact11,P0-C,Persistent order flow with approximately diffusive prices,"trade-price change ACF lag 1, after a repeated sign",0.1327,0.122027,continuation of a sweep in the same direction
+fact11,P0-C,Persistent order flow with approximately diffusive prices,"trade-price change ACF lag 1, fill level",0.0741216,0.042173,positive by construction: sweeps walk the book one way
+fact11,P0-C,Persistent order flow with approximately diffusive prices,variance ratio at k>=100 (quote-event time),2.65817,2.58573,1.0 = diffusive; event time compresses busy trending periods
+fact11,P0-C,Persistent order flow with approximately diffusive prices,aggressor sign / contemporaneous mid-return correlation,0.373865,0.410066,"this is impact (R(1)), not predictability"
+fact11,P0-C,Persistent order flow with approximately diffusive prices,aggressor sign / *subsequent* mid-return correlation,0.135453,0.160714,the predictability that must stay small even though the sign series itself is strongly persistent
+fact11,P0-C,Persistent order flow with approximately diffusive prices,mid-return ACF lag 1 (1s bars),0.088139,0.118521,"noise floor +/-0.0024, n=691,199"
+fact11,P0-C,Persistent order flow with approximately diffusive prices,variance ratio at k>=10 (1s bars),1.68627,1.78128,the clock-time diffusivity the literature refers to
+fact11,P0-C,Persistent order flow with approximately diffusive prices,mid-return ACF lag 1 (60s bars),0.03819,0.0240776,"noise floor +/-0.0183, n=11,519"
+fact11,P0-C,Persistent order flow with approximately diffusive prices,variance ratio at k>=10 (60s bars),0.944521,1.04243,the clock-time diffusivity the literature refers to
+fact12,P0-C / P1,Selective liquidity taking / timing of large trades,depth seen by top size decile / unconditional,0.784833,0.78369,> 1 means large orders time the book
+fact12,P0-C / P1,Selective liquidity taking / timing of large trades,depth seen by bottom size decile / unconditional,0.880591,0.89025,
+fact12,P0-C / P1,Selective liquidity taking / timing of large trades,depth seen by top size decile / depth seen by the average order,0.909296,0.910963,event-weighted control: > 1 means large orders pick better books than other orders do
+fact12,P0-C / P1,Selective liquidity taking / timing of large trades,depth 150 s before a large order / unconditional,0.982507,0.970627,Schnaubelt et al. report liquidity improving 2-3 min ahead
+fact12,P0-C / P1,Selective liquidity taking / timing of large trades,depth at the moment of a large order / 150 s before,0.819166,0.787657,> 1 means depth built up into the trade
+fact13,P1,Queue imbalance predicts the near-term price direction,directional accuracy at h=1 quote event,0.693179,0.680417,0.5 = no information
+fact13,P1,Queue imbalance predicts the near-term price direction,best directional accuracy,0.770133,0.766003,at h=20 quote events
+fact13,P1,Queue imbalance predicts the near-term price direction,imbalance / forward-return correlation at h=10,0.324314,0.339349,
+fact14,P1,Volatility clustering at short horizons,|return| ACF decay exponent (quote-event time),0.602205,0.492376,R2=0.877
+fact14,P1,Volatility clustering at short horizons,squared-return ACF decay exponent (1s bars),0.271681,0.338139,"lags 2-200, n=691,200 bars, R2=0.76; no literature target"
+fact14,P1,Volatility clustering at short horizons,squared-return ACF decay exponent (60s bars),0.408523,0.757111,"lags 2-200, n=11,520 bars, R2=0.64; literature 0.16"
+fact14,P1,Volatility clustering at short horizons,|return| ACF at lag 100 (quote-event time),0.0191717,0.0254314,positive and slowly decaying = clustering
+fact16,P1,BTC trade-size distribution,median aggressive-order size (BTC),0.00127404,0.00135105,
+fact16,P1,BTC trade-size distribution,share of aggressive orders below 0.01 BTC,0.759088,0.767007,many small trades
+fact16,P1,BTC trade-size distribution,"Hill tail index alpha (top 5%, aggressive orders)",1.06442,0.900811,threshold 0.1752 BTC; alpha < 3 = heavy tail
+fact16,P1,BTC trade-size distribution,99.9th pct / median size ratio,3280.87,2960.66,
+fact16,P1,BTC trade-size distribution,mean aggressive-order notional (USD),3590.32,3150.86,
+fact16,P1,BTC trade-size distribution,share of orders on the 0.1 BTC grid,0.119164,0.120756,round-number clustering
+fact17,P2,24/7 time-of-day liquidity and activity structure,hourly spread: max/min ratio,2.38157,3.11014,
+fact17,P2,24/7 time-of-day liquidity and activity structure,hourly depth: max/min ratio,1.14507,1.17814,
+fact17,P2,24/7 time-of-day liquidity and activity structure,hourly volume: max/min ratio,5.63046,5.73912,
+fact17,P2,24/7 time-of-day liquidity and activity structure,edge-vs-middle ratio of hourly volume (U-shape score),0.621063,0.801272,~1 = no equity-like U-shape
+fact17,P2,24/7 time-of-day liquidity and activity structure,busiest UTC hour by volume,13,14,hour of day
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",pseudo-metaorders identified,20846,28140,"gap 1.0s, >= 2 children"
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",impact concavity exponent delta (proxy),0.182544,0.154362,"se 0.027, R2=0.761; square root = 0.5"
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",power-law R2 minus logarithmic R2,-0.183699,-0.102204,positive favours the power law (Zarinelli et al. caveat)
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",trajectory concavity: impact at 50% executed / impact at 100%,0.510048,0.490386,"0.5 = linear build-up, ~0.71 = square-root build-up"
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",impact 10 min after completion / peak (raw),1.30757,1.34642,includes market drift and the correlated flow that follows
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",impact 10 min after completion / peak (drift-adjusted),1.20805,1.46154,"random-time control removed; Zarinelli et al. ~2/3 in US equities, Donier-Bonart near-full decay for the uninformed part of BTC impact"
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",median pseudo-metaorder size (BTC),0.00848949,0.00757171,
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",Q/ADV explored: 1st percentile,1.31243e-07,1.32179e-07,Donier-Bonart span ~4 decades of metaorder size
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",Q/ADV explored: 99th percentile,0.0041648,0.00325589,decades covered = log10(p99/p01)
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",decades of size covered by the proxy,4.50152,4.39151,a narrow range flattens any concavity estimate
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",median participation rate of the proxy,1,1,mechanically high: runs are defined by same-signed flow
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",average daily volume (BTC),1273.44,1207.99,
+fact01_03,P0-V (proxy),"Metaorder impact proxy: concavity, trajectory and decay",daily volatility (bps),142.99,149.208,from 60 s mid bars

@@ -1,0 +1,809 @@
+{
+  "generated": "2026-08-29T01:19:03",
+  "runtime": {
+    "ingest_seconds": 0.0005942999850958586,
+    "analysis_seconds": 136.47467080014758
+  },
+  "outputs": [
+    {
+      "kind": "table",
+      "fact": "fact00",
+      "slug": "snapshot_agreement",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact00_snapshot_agreement__normal.csv",
+      "caption": "Reconstruction vs exchange snapshot blocks - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact00",
+      "slug": "snapshot_agreement",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact00_snapshot_agreement__stress.csv",
+      "caption": "Reconstruction vs exchange snapshot blocks - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact00",
+      "slug": "feed_and_reconstruction_diagnostics",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact00_feed_and_reconstruction_diagnostics__compare.csv",
+      "caption": "Feed integrity and reconstruction health"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact00",
+      "slug": "reconstruction_validation",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact00_reconstruction_validation__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "cost_curve",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact05_cost_curve__normal.csv",
+      "caption": "Virtual market-order cost, time-weighted over all book states - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "depth_bands",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact05_depth_bands__normal.csv",
+      "caption": "Mean cumulative visible depth by price band - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact05",
+      "slug": "liquidity_cost_and_depth",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact05_liquidity_cost_and_depth__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "cost_curve",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact05_cost_curve__stress.csv",
+      "caption": "Virtual market-order cost, time-weighted over all book states - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "depth_bands",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact05_depth_bands__stress.csv",
+      "caption": "Mean cumulative visible depth by price band - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact05",
+      "slug": "liquidity_cost_and_depth",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact05_liquidity_cost_and_depth__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact05",
+      "slug": "liquidity_cost_and_depth",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact05_liquidity_cost_and_depth__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact05",
+      "slug": "cost_curve",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact05_cost_curve__compare.csv",
+      "caption": "Virtual market-order cost curve, both regimes"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact06_spread_distribution__normal.csv",
+      "caption": "Quoted-spread distribution (bps) - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "hourly_profile",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact06_hourly_profile__normal.csv",
+      "caption": "Time-weighted hourly spread / depth profile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "state_dependence",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact06_state_dependence__normal.csv",
+      "caption": "Spread conditional on book state - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact06_spread_distribution__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact06_spread_distribution__stress.csv",
+      "caption": "Quoted-spread distribution (bps) - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "hourly_profile",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact06_hourly_profile__stress.csv",
+      "caption": "Time-weighted hourly spread / depth profile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact06",
+      "slug": "state_dependence",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact06_state_dependence__stress.csv",
+      "caption": "Spread conditional on book state - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact06_spread_distribution__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact06",
+      "slug": "spread_distribution",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact06_spread_distribution__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "event_time_recovery_large",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact07_event_time_recovery_large__normal.csv",
+      "caption": "Recovery after large orders, event time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "clock_time_recovery_large",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact07_clock_time_recovery_large__normal.csv",
+      "caption": "Recovery after large orders, clock time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact07",
+      "slug": "resiliency",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact07_resiliency__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "event_time_recovery_large",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact07_event_time_recovery_large__stress.csv",
+      "caption": "Recovery after large orders, event time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact07",
+      "slug": "clock_time_recovery_large",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact07_clock_time_recovery_large__stress.csv",
+      "caption": "Recovery after large orders, clock time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact07",
+      "slug": "resiliency",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact07_resiliency__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact07",
+      "slug": "resiliency",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact07_resiliency__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "ofi_response_curve",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact08_ofi_response_curve__normal.csv",
+      "caption": "Mid change vs order-flow imbalance - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "impact_vs_depth",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact08_impact_vs_depth__normal.csv",
+      "caption": "OFI impact coefficient by depth quartile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08",
+      "slug": "ofi_response",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact08_ofi_response__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "ofi_response_curve",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact08_ofi_response_curve__stress.csv",
+      "caption": "Mid change vs order-flow imbalance - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact08",
+      "slug": "impact_vs_depth",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact08_impact_vs_depth__stress.csv",
+      "caption": "OFI impact coefficient by depth quartile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08",
+      "slug": "ofi_response",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact08_ofi_response__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact08",
+      "slug": "ofi_response",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact08_ofi_response__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_function",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact09_response_function__normal.csv",
+      "caption": "Trade response R(l) in aggressive-order time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_by_size",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact09_response_by_size__normal.csv",
+      "caption": "R(l) by aggressive-order size quintile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09",
+      "slug": "trade_response",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact09_trade_response__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_function",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact09_response_function__stress.csv",
+      "caption": "Trade response R(l) in aggressive-order time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact09",
+      "slug": "response_by_size",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact09_response_by_size__stress.csv",
+      "caption": "R(l) by aggressive-order size quintile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09",
+      "slug": "trade_response",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact09_trade_response__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact09",
+      "slug": "trade_response",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact09_trade_response__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact10",
+      "slug": "sign_autocorrelation",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact10_sign_autocorrelation__normal.csv",
+      "caption": "Order-sign autocorrelation - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact10",
+      "slug": "sign_memory",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact10_sign_memory__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact10",
+      "slug": "sign_autocorrelation",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact10_sign_autocorrelation__stress.csv",
+      "caption": "Order-sign autocorrelation - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact10",
+      "slug": "sign_memory",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact10_sign_memory__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact10",
+      "slug": "sign_memory",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact10_sign_memory__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "return_autocorrelation",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact11_return_autocorrelation__normal.csv",
+      "caption": "Return autocorrelation - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "variance_ratio",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact11_variance_ratio__normal.csv",
+      "caption": "Variance ratios in event time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "clock_time_diffusivity",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact11_clock_time_diffusivity__normal.csv",
+      "caption": "Clock-bar return diagnostics - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact11",
+      "slug": "diffusion",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact11_diffusion__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "return_autocorrelation",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact11_return_autocorrelation__stress.csv",
+      "caption": "Return autocorrelation - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "variance_ratio",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact11_variance_ratio__stress.csv",
+      "caption": "Variance ratios in event time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact11",
+      "slug": "clock_time_diffusivity",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact11_clock_time_diffusivity__stress.csv",
+      "caption": "Clock-bar return diagnostics - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact11",
+      "slug": "diffusion",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact11_diffusion__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact11",
+      "slug": "diffusion",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact11_diffusion__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "book_state_by_size_decile",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact12_book_state_by_size_decile__normal.csv",
+      "caption": "Book state seen by each order-size decile - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "pre_trade_liquidity_large",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact12_pre_trade_liquidity_large__normal.csv",
+      "caption": "Liquidity before large orders - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact12",
+      "slug": "selective_liquidity",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact12_selective_liquidity__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "book_state_by_size_decile",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact12_book_state_by_size_decile__stress.csv",
+      "caption": "Book state seen by each order-size decile - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact12",
+      "slug": "pre_trade_liquidity_large",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact12_pre_trade_liquidity_large__stress.csv",
+      "caption": "Liquidity before large orders - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact12",
+      "slug": "selective_liquidity",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact12_selective_liquidity__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact12",
+      "slug": "selective_liquidity",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact12_selective_liquidity__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "imbalance_response",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact13_imbalance_response__normal.csv",
+      "caption": "Forward mid move by queue-imbalance bin - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "predictive_power",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact13_predictive_power__normal.csv",
+      "caption": "Queue-imbalance predictive power by horizon - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact13",
+      "slug": "queue_imbalance",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact13_queue_imbalance__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "imbalance_response",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact13_imbalance_response__stress.csv",
+      "caption": "Forward mid move by queue-imbalance bin - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact13",
+      "slug": "predictive_power",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact13_predictive_power__stress.csv",
+      "caption": "Queue-imbalance predictive power by horizon - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact13",
+      "slug": "queue_imbalance",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact13_queue_imbalance__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact13",
+      "slug": "queue_imbalance",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact13_queue_imbalance__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "abs_return_acf_event_time",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact14_abs_return_acf_event_time__normal.csv",
+      "caption": "Absolute-return ACF in quote-event time - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "clock_time_decay",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact14_clock_time_decay__normal.csv",
+      "caption": "Squared-return ACF decay by bar length - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact14",
+      "slug": "volatility_clustering",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact14_volatility_clustering__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "abs_return_acf_event_time",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact14_abs_return_acf_event_time__stress.csv",
+      "caption": "Absolute-return ACF in quote-event time - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact14",
+      "slug": "clock_time_decay",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact14_clock_time_decay__stress.csv",
+      "caption": "Squared-return ACF decay by bar length - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact14",
+      "slug": "volatility_clustering",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact14_volatility_clustering__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact14",
+      "slug": "volatility_clustering",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact14_volatility_clustering__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "size_distribution",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact16_size_distribution__normal.csv",
+      "caption": "Trade-size distribution - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "round_number_clustering",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact16_round_number_clustering__normal.csv",
+      "caption": "Round-number clustering of aggressive-order size - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact16",
+      "slug": "trade_size",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact16_trade_size__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "size_distribution",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact16_size_distribution__stress.csv",
+      "caption": "Trade-size distribution - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact16",
+      "slug": "round_number_clustering",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact16_round_number_clustering__stress.csv",
+      "caption": "Round-number clustering of aggressive-order size - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact16",
+      "slug": "trade_size",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact16_trade_size__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact16",
+      "slug": "trade_size",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact16_trade_size__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact17",
+      "slug": "hourly_profile",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact17_hourly_profile__normal.csv",
+      "caption": "Hour-of-day liquidity and activity - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact17",
+      "slug": "time_of_day",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact17_time_of_day__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact17",
+      "slug": "hourly_profile",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact17_hourly_profile__stress.csv",
+      "caption": "Hour-of-day liquidity and activity - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact17",
+      "slug": "time_of_day",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact17_time_of_day__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact17",
+      "slug": "time_of_day",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact17_time_of_day__compare.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_vs_size",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact01_03_impact_vs_size__normal.csv",
+      "caption": "Pseudo-metaorder impact vs relative size - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_trajectory",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact01_03_impact_trajectory__normal.csv",
+      "caption": "Impact along the execution trajectory - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_decay",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact01_03_impact_decay__normal.csv",
+      "caption": "Post-completion impact decay - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "pseudo_metaorder_population",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact01_03_pseudo_metaorder_population__normal.csv",
+      "caption": "Pseudo-metaorder population summary - Normal (18-24 Jul 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact01_03",
+      "slug": "metaorder_impact_proxy",
+      "regime": "normal",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\normal\\fact01_03_metaorder_impact_proxy__normal.png",
+      "caption": ""
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_vs_size",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact01_03_impact_vs_size__stress.csv",
+      "caption": "Pseudo-metaorder impact vs relative size - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_trajectory",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact01_03_impact_trajectory__stress.csv",
+      "caption": "Impact along the execution trajectory - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "impact_decay",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact01_03_impact_decay__stress.csv",
+      "caption": "Post-completion impact decay - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "table",
+      "fact": "fact01_03",
+      "slug": "pseudo_metaorder_population",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact01_03_pseudo_metaorder_population__stress.csv",
+      "caption": "Pseudo-metaorder population summary - Stress (26 Jul - 2 Aug 2026)"
+    },
+    {
+      "kind": "figure",
+      "fact": "fact01_03",
+      "slug": "metaorder_impact_proxy",
+      "regime": "stress",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\stress\\fact01_03_metaorder_impact_proxy__stress.png",
+      "caption": ""
+    },
+    {
+      "kind": "figure",
+      "fact": "fact01_03",
+      "slug": "metaorder_impact_proxy",
+      "regime": "comparison",
+      "path": "F:\\5220 Capstone Project\\data\\Stylized facts\\results\\comparison\\fact01_03_metaorder_impact_proxy__compare.png",
+      "caption": ""
+    }
+  ]
+}
