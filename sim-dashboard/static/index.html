@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CALM Liquidation Replay</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="plotly.min.js"></script>  <!-- plotly.js 4.0.0, bundled so the page works offline -->
+
+</head>
+<body>
+<header>
+  <div>
+    <h1>CALM: Coinbase Agent-based Liquidation &amp; Market Simulator</h1>
+    <p class="sub" id="subtitle">Liquidation replay · the same market with and without a liquidation</p>
+  </div>
+  <span class="badge" id="badge" hidden></span>
+</header>
+
+<div class="app">
+  <aside>
+    <form id="settings">
+      <h2>Market</h2>
+      <p class="fixed">Coinbase · SOL-USD</p>
+      <label>Model <select name="model" id="model"></select></label>
+      <label>Seed index (<span id="seed-range">0–29</span>) <input name="seed_index" type="number" step="1" min="0"></label>
+      <label>Simulated time (min) <input name="minutes" type="number" step="1" min="1"></label>
+
+      <h2>Liquidation</h2>
+      <label>Side
+        <select name="side"><option value="sell">Sell</option><option value="buy">Buy</option></select>
+      </label>
+      <label>Quantity (SOL) <input name="quantity" type="number" step="any" min="0"></label>
+      <p class="hint" id="qty-hint"></p>
+      <label>Starts at (min) <input name="start_min" type="number" step="0.5" min="0"></label>
+      <label>Duration (min) <input name="duration_min" type="number" step="0.5" min="0.5"></label>
+      <label>TWAP slices <input name="slices" type="number" step="1" min="1"></label>
+
+      <button type="submit" id="run">Run</button>
+      <div class="progress" id="progress" hidden><div id="progress-bar"></div></div>
+      <p class="status" id="status"></p>
+    </form>
+    <p class="note">Both runs use the same seed: the market is identical until the liquidation starts.
+      Each run is set up exactly as the impact-law tests set up the same seed index.
+      A finished run is cached, so running the same settings again replays at once.</p>
+  </aside>
+
+  <main>
+    <div class="player">
+      <button id="play" disabled aria-label="Play">▶</button>
+      <input id="scrub" type="range" min="0" max="0" step="1" value="0" disabled aria-label="Simulated time">
+      <span id="clock" class="clock">00:00</span>
+      <label class="speed">Speed
+        <select id="speed">
+          <option value="10">10×</option><option value="30">30×</option><option value="60">60×</option>
+          <option value="120">120×</option><option value="300">300×</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><span class="k">Liquidated</span><span class="v" id="kpi-done">–</span><span class="d" id="kpi-done-sub"></span></div>
+      <div class="tile"><span class="k">Liquidation impact</span><span class="v" id="kpi-impact">–</span><span class="d">mid vs the same market without the liquidation; + = against the trade</span></div>
+      <div class="tile"><span class="k">Implementation shortfall</span><span class="v" id="kpi-cost">–</span><span class="d" id="kpi-cost-sub">vs the arrival mid; shown when the liquidation ends</span></div>
+    </div>
+
+    <section class="card wide"><h3>Mid price</h3><div id="chart-price" class="chart tall"></div></section>
+    <section class="card"><h3>Liquidation impact I(t), bps (+ = against the trade)</h3><div id="chart-impact" class="chart"></div></section>
+    <section class="card"><h3 id="depth-title">Depth on the side being hit, top 10 levels</h3><div id="chart-depth" class="chart"></div></section>
+    <p class="caption" id="book-caption">Order books: the 10 best price levels on each side every simulated second.
+      Colour is the volume resting at the price, bids blue and asks red; ▲ buy and ▼ sell trades
+      (marker area grows with size); ● liquidation fills.</p>
+    <section class="card"><h3>Order book · with liquidation</h3><div id="chart-book-liq" class="chart tall"></div></section>
+    <section class="card"><h3>Order book · without liquidation</h3><div id="chart-book-cf" class="chart tall"></div></section>
+    <p class="empty" id="empty">Choose the settings and press <b>Run</b>.</p>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

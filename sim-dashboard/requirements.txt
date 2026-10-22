@@ -1,0 +1,4 @@
+# the simulators and the dashboard (tested with Python 3.12, numpy 2.0.2, pandas 2.2.2, tqdm 4.66.5)
+numpy>=2.0
+pandas>=2.2
+tqdm>=4.66

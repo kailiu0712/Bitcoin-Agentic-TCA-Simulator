@@ -1,0 +1,87 @@
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --with: #eb6834;      /* with liquidation (categorical slot 2) */
+  --without: #2a78d6;   /* without liquidation (categorical slot 1) */
+  --good: #006300;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); }
+
+header {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 24px; border-bottom: 1px solid var(--border); background: var(--surface);
+}
+h1 { margin: 0; font-size: 20px; font-weight: 650; }
+.sub { margin: 2px 0 0; color: var(--ink-2); font-size: 14px; }
+.badge {
+  font-size: 13px; color: var(--good); border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 12px; background: var(--surface); white-space: nowrap;
+}
+
+.app { display: grid; grid-template-columns: 290px 1fr; min-height: calc(100vh - 70px); }
+
+aside { padding: 16px 20px; border-right: 1px solid var(--border); background: var(--surface); }
+aside h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 16px 0 8px; }
+aside h2:first-child { margin-top: 0; }
+label { display: block; font-size: 13px; color: var(--ink-2); margin-bottom: 10px; }
+input, select {
+  display: block; width: 100%; margin-top: 4px; padding: 6px 8px; font: inherit; font-size: 14px;
+  color: var(--ink); background: #fff; border: 1px solid var(--axis); border-radius: 6px;
+}
+.hint { margin: -6px 0 10px; font-size: 12px; color: var(--muted); }
+.fixed { margin: 0 0 10px; font-size: 14px; color: var(--ink); }
+button {
+  font: inherit; border: 0; border-radius: 6px; cursor: pointer; color: #fff; background: var(--ink);
+}
+button:disabled { opacity: .4; cursor: default; }
+#run { width: 100%; margin-top: 8px; padding: 10px; font-size: 15px; font-weight: 600; }
+.progress { height: 6px; margin-top: 10px; background: var(--grid); border-radius: 3px; overflow: hidden; }
+#progress-bar { height: 100%; width: 0; background: var(--ink); transition: width .3s; }
+.status { min-height: 18px; margin: 8px 0 0; font-size: 13px; color: var(--ink-2); }
+.status.error { color: #d03b3b; }
+.note { font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 18px; }
+
+main {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px 24px 32px;
+  align-content: start; min-width: 0;
+}
+.player, .tiles, .wide, .empty, .caption { grid-column: 1 / -1; }
+.player { display: flex; align-items: center; gap: 12px; }
+#play { width: 40px; height: 40px; font-size: 16px; flex: none; }
+#scrub { flex: 1; margin: 0; padding: 0; border: 0; accent-color: var(--ink); }
+.clock { font-variant-numeric: tabular-nums; font-size: 15px; min-width: 64px; }
+.speed { display: flex; align-items: center; gap: 6px; margin: 0; }
+.speed select { width: auto; margin: 0; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tile, .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+.tile { padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.tile .k { font-size: 12px; color: var(--ink-2); }
+.tile .v { font-size: 26px; font-weight: 600; }
+.tile .d { font-size: 12px; color: var(--muted); }
+
+.card { padding: 12px 12px 4px; min-width: 0; }
+.card h3 { margin: 0 4px 4px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.chart { height: 240px; }
+.chart.tall { height: 340px; }
+.empty { color: var(--muted); text-align: center; padding: 8px; }
+.caption { margin: 4px 4px -6px; font-size: 13px; color: var(--ink-2); }
+body:not(.loaded) .card, body:not(.loaded) .tiles, body:not(.loaded) .caption { display: none; }
+body.loaded .empty { display: none; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  aside { border-right: 0; border-bottom: 1px solid var(--border); }
+  main { grid-template-columns: 1fr; padding: 16px; }
+  .tiles { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,5 @@
+# runs made by the server: rebuilt on demand (the default runs at the first start)
+cache/
+__pycache__/
+# the original screen recording; sim-demo.mp4 is the compressed copy
+sim-demo-full.mp4
